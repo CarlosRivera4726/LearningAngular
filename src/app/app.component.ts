@@ -1,13 +1,21 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { initFlowbite } from 'flowbite';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { FormGroup, FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, NavbarComponent, FooterComponent, FormsModule],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrl: './app.component.less',
 })
-export class AppComponent {
-  title = 'my-crud';
+export class AppComponent implements OnInit {
+  title = 'my-app';
+
+  ngOnInit(): void {
+    initFlowbite();
+  }
 }

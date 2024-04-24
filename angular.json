@@ -3,9 +3,15 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "my-crud": {
+
+    "my-app": {
       "projectType": "application",
-      "schematics": {},
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "css"
+        }
+      },
+
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
@@ -13,13 +19,15 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/my-crud",
+            "outputPath": "dist/my-app",
+
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
               "zone.js"
             ],
             "tsConfig": "tsconfig.app.json",
+            "inlineStyleLanguage": "css",
             "assets": [
               "src/favicon.ico",
               "src/assets"
@@ -27,12 +35,7 @@
             "styles": [
               "src/styles.css"
             ],
-            "scripts": [],
-            "server": "src/main.server.ts",
-            "prerender": true,
-            "ssr": {
-              "entry": "server.ts"
-            }
+            "scripts": []
           },
           "configurations": {
             "production": {
@@ -62,10 +65,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "my-crud:build:production"
+              "buildTarget": "my-app:build:production"
             },
             "development": {
-              "buildTarget": "my-crud:build:development"
+              "buildTarget": "my-app:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -73,7 +76,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "buildTarget": "my-crud:build"
+            "buildTarget": "my-app:build"
           }
         },
         "test": {
@@ -84,6 +87,7 @@
               "zone.js/testing"
             ],
             "tsConfig": "tsconfig.spec.json",
+            "inlineStyleLanguage": "css",
             "assets": [
               "src/favicon.ico",
               "src/assets"
