@@ -30,13 +30,19 @@ export class UserFormComponent implements OnInit {
         Validators.required,
         Validators.minLength(8),
       ]),
+      confirmPassword: new FormControl('', [
+        Validators.required,
+        Validators.minLength(8),
+      ]),
     });
   }
 
   onSubmit(): void {
-    if (this.userForm.valid) {
-      //this.userAdded.emit();
-      //this.userForm.reset();
+    if (this.userForm.value.password !== this.userForm.value.confirmPassword) {
+      if (this.userForm.valid) {
+        //this.userAdded.emit();
+        //this.userForm.reset();
+      }
     }
   }
 }
