@@ -84,6 +84,11 @@ export class UserFormComponent implements OnInit {
           this.router.navigate(['/users']);
         }, 3000);
       },
+      error: (error) => {
+        this.message = 'Error al agregar el usuario';
+        this.style =
+          'p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-300';
+      },
     });
   }
 
