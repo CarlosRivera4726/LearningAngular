@@ -28,6 +28,7 @@ export class UserListComponent implements OnInit {
       },
       error: (err) => {
         console.error(err);
+        this.users = [];
       },
     });
   }
