@@ -26,7 +26,8 @@ import { Router } from '@angular/router';
   styleUrl: './user-form.component.less',
 })
 export class UserFormComponent implements OnInit {
-  constructor(private userService: UserService, private router: Router) {}
+  constructor(private userService: UserService) {}
+  router: Router = new Router();
   userForm!: FormGroup;
   message: string = '';
   style!: string;
