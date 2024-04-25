@@ -8,17 +8,29 @@ import {
 } from '@angular/forms';
 import { IUser } from '../../../core/interfaces/users/iuser';
 import { UserService } from '../../../core/services/users/user.service';
+import { MessageComponent } from '../../messages/message/message.component';
+import { JsonPipe, NgStyle } from '@angular/common';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-user-form',
   standalone: true,
-  imports: [FormsModule, ReactiveFormsModule],
+  imports: [
+    FormsModule,
+    ReactiveFormsModule,
+    MessageComponent,
+    NgStyle,
+    JsonPipe,
+  ],
   providers: [UserService],
   templateUrl: './user-form.component.html',
   styleUrl: './user-form.component.less',
 })
 export class UserFormComponent implements OnInit {
-  constructor(private userService: UserService) {}
+  constructor(private userService: UserService, private router: Router) {}
   userForm!: FormGroup;
+  message: string = '';
+  style!: string;
+  newUser!: IUser;
 
   @Output() userAdded!: EventEmitter<IUser>;
 
@@ -38,11 +50,44 @@ export class UserFormComponent implements OnInit {
   }
 
   onSubmit(): void {
-    if (this.userForm.value.password !== this.userForm.value.confirmPassword) {
-      if (this.userForm.valid) {
-        //this.userAdded.emit();
-        //this.userForm.reset();
-      }
+    if (!this.userForm.valid) {
+      this.message = 'Please fill all the required fields';
+      this.style =
+        'p-4 mb-4 text-sm text-yellow-800 rounded-lg bg-yellow-50 dark:bg-gray-800 dark:text-yellow-300';
     }
+    if (this.userForm.value.password.length < 8) {
+      this.message = 'La contraseña debe tener al menos 8 caracteres';
+      this.style =
+        'p-4 mb-4 text-sm text-yellow-800 rounded-lg bg-yellow-50 dark:bg-gray-800 dark:text-yellow-300';
+    } else if (
+      this.userForm.value.password !== this.userForm.value.confirmPassword
+    ) {
+      this.message = 'Contraseña y Confirmar contraseña deben ser iguales';
+      this.style =
+        'p-4 mb-4 text-sm text-yellow-800 rounded-lg bg-yellow-50 dark:bg-gray-800 dark:text-yellow-300';
+    } else {
+      this.newUser = {
+        ...this.userForm.value,
+      };
+      this.addUser(this.newUser);
+      this.userForm.reset();
+    }
+  }
+
+  addUser(newUser: IUser) {
+    this.userService.addUser(newUser).subscribe({
+      next: (data) => {
+        this.message = 'Usuario agregado correctamente!';
+        this.style =
+          'p-4 mb-4 text-sm text-green-800 rounded-lg bg-green-50 dark:bg-gray-800 dark:text-green-300';
+        setInterval(() => {
+          this.router.navigate(['/users']);
+        }, 3000);
+      },
+    });
+  }
+
+  get password() {
+    return this.userForm.get('password');
   }
 }
