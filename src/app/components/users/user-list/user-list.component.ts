@@ -4,11 +4,12 @@ import { IUser } from '../../../core/interfaces/users/iuser';
 import { RouterLink } from '@angular/router';
 import { ChangeCharPipe } from '../../../core/pipes/change-char.pipe';
 import { LimitCharPipe } from '../../../core/pipes/limit-char.pipe';
+import { JsonPipe } from '@angular/common';
 
 @Component({
   selector: 'app-user-list',
   standalone: true,
-  imports: [RouterLink, ChangeCharPipe, LimitCharPipe],
+  imports: [RouterLink, ChangeCharPipe, LimitCharPipe, JsonPipe],
   templateUrl: './user-list.component.html',
   styleUrl: './user-list.component.less',
 })
