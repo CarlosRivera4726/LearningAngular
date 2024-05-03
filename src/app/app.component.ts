@@ -14,8 +14,17 @@ import { FormGroup, FormsModule } from '@angular/forms';
 })
 export class AppComponent implements OnInit {
   title = 'my-app';
+  name = localStorage.getItem('name');
+  email = localStorage.getItem('email');
 
   ngOnInit(): void {
     initFlowbite();
+    this.verifyIfLogged();
+  }
+
+  verifyIfLogged() {
+    if (!this.name && !this.email) {
+      sessionStorage.removeItem('token');
+    }
   }
 }

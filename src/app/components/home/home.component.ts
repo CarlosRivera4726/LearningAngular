@@ -1,5 +1,5 @@
 import { DatePipe } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-home',
@@ -10,6 +10,8 @@ import { Component } from '@angular/core';
   styleUrl: './home.component.less',
 })
 export class HomeComponent {
+  name = localStorage.getItem('name');
+  email = localStorage.getItem('email');
   constructor() {}
   realTime = Date.now();
 }

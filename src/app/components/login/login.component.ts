@@ -38,6 +38,8 @@ export class LoginComponent implements OnInit {
     this.userServie.login(this.formLogin.value).subscribe({
       next: (data) => {
         sessionStorage.setItem('token', data.Authorization);
+        localStorage.setItem('name', data.data.name);
+        localStorage.setItem('email', data.data.email);
         this.router.navigate(['/users']);
       },
       error: (error) => {
