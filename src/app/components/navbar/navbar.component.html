@@ -21,11 +21,26 @@
             class="block py-2 px-3 text-black dark:text-white  rounded md:bg-transparent  md:p-0"
             aria-current="page">Inicio</a>
         </li>
+        @if (isLogged) {
         <li>
           <a routerLink="/users" routerLinkActive="active"
             class="block py-2 px-3 text-black dark:text-white  rounded md:bg-transparent  md:p-0"
             aria-current="page">Usuarios</a>
         </li>
+        <li>
+          <button (click)="logout()" type="button"
+            class="block py-2 px-3 text-black dark:text-white  rounded md:bg-transparent  md:p-0"
+            aria-current="page">Logout</button>
+        </li>
+        }
+        @else {
+        <li>
+          <a routerLink="/login" routerLinkActive="active"
+            class="block py-2 px-3 text-black dark:text-white  rounded md:bg-transparent  md:p-0"
+            aria-current="page">Iniciar Sesion</a>
+        </li>
+
+        }
       </ul>
     </div>
   </div>
