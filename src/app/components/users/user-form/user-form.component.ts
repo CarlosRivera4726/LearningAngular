@@ -11,6 +11,7 @@ import { UserService } from '../../../core/services/users/user.service';
 import { MessageComponent } from '../../messages/message/message.component';
 import { JsonPipe, NgStyle } from '@angular/common';
 import { Router } from '@angular/router';
+import { LoginVerifyService } from '../../../core/services/login/login-verify.service';
 @Component({
   selector: 'app-user-form',
   standalone: true,
@@ -26,7 +27,10 @@ import { Router } from '@angular/router';
   styleUrl: './user-form.component.less',
 })
 export class UserFormComponent implements OnInit {
-  constructor(private userService: UserService) {}
+  constructor(
+    private userService: UserService,
+    private verifyLogin: LoginVerifyService
+  ) {}
   router: Router = new Router();
   userForm!: FormGroup;
   message: string = '';
@@ -82,8 +86,12 @@ export class UserFormComponent implements OnInit {
         this.style =
           'p-4 mb-4 text-sm text-green-800 rounded-lg bg-green-50 dark:bg-gray-800 dark:text-green-300';
         setTimeout(() => {
-          this.router.navigate(['/login']);
-        }, 2000);
+          if (this.verifyLogin.verifyLogin()) {
+            this.router.navigate(['/users']);
+          } else {
+            this.router.navigate(['/login']);
+          }
+        }, 300);
       },
       error: (error) => {
         this.message = 'Error al agregar el usuario';

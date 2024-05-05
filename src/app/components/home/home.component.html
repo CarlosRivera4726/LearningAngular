@@ -1,23 +1,36 @@
 @if(name || email){
-<div class="cursor-default m-auto justify-center items-center mt-36 mb-[9.55rem] flex">
+<div class="cursor-default m-auto justify-center items-center mt-48 flex">
   <a
-    class="m-auto block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
-
-    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">SESIÓN INICIADA CÓMO</h5>
+    class="m-auto block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700"
+  >
+    <h5
+      class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
+    >
+      SESIÓN INICIADA CÓMO
+    </h5>
     <ul class="text-yellow-300">
-      <li><span class="font-bold dark:text-white text-gray-700">Nombre:</span> {{name}}</li>
-      <li><span class="font-bold dark:text-white text-gray-700">Correo:</span> {{email}}</li>
-      <li><span class="font-bold dark:text-white text-gray-700">Hora:</span>
-        {{ realTime | date: 'dd/MMMM/yy - HH:mm:ss'}}
+      <li>
+        <span class="font-bold dark:text-white text-gray-700">Nombre:</span>
+        {{ name }}
+      </li>
+      <li>
+        <span class="font-bold dark:text-white text-gray-700">Correo:</span>
+        {{ email }}
+      </li>
+      <li>
+        <span class="font-bold dark:text-white text-gray-700">Hora:</span>
+        {{ realTime | date : "dd/MMMM/yy - HH:mm:ss" }}
       </li>
     </ul>
   </a>
-
 </div>
-}
-@else {
+} @else {
 <div class="mt-10 mb-[347px]">
-  <h1 class="text-center text-white text-4xl font-bold">Deberias iniciar sesión</h1>
-  <p class="text-center text-yellow-200 text-2xl font-semibold">Después se mostraran los productos disponibles</p>
+  <h1 class="text-center text-white text-4xl font-bold">
+    Deberias iniciar sesión
+  </h1>
+  <p class="text-center text-yellow-200 text-2xl font-semibold">
+    Después se mostraran los productos disponibles
+  </p>
 </div>
 }

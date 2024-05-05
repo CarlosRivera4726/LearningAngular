@@ -8,6 +8,7 @@ import {
 } from '@angular/forms';
 import { Router, RouterLink } from '@angular/router';
 import { UserService } from '../../core/services/users/user.service';
+import { LoginVerifyService } from '../../core/services/login/login-verify.service';
 
 @Component({
   selector: 'app-login',
@@ -17,7 +18,11 @@ import { UserService } from '../../core/services/users/user.service';
   styleUrl: './login.component.css',
 })
 export class LoginComponent implements OnInit {
-  constructor(private userServie: UserService, private router: Router) {}
+  constructor(
+    private userServie: UserService,
+    private router: Router,
+    private verifyLogin: LoginVerifyService
+  ) {}
   formLogin!: FormGroup;
 
   ngOnInit(): void {
@@ -40,7 +45,11 @@ export class LoginComponent implements OnInit {
         sessionStorage.setItem('token', data.Authorization);
         localStorage.setItem('name', data.data.name);
         localStorage.setItem('email', data.data.email);
-        this.router.navigate(['/users']);
+        if (this.verifyLogin.verifyLogin()) {
+          setTimeout(() => {
+            this.router.navigate(['/users']);
+          }, 300);
+        }
       },
       error: (error) => {
         alert('Error');

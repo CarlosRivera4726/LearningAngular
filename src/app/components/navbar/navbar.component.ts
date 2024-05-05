@@ -13,7 +13,15 @@ export class NavbarComponent implements OnInit {
   token: string | null = null;
   isLogged: boolean = false;
   ngOnInit(): void {
-    this.isLogged = this.getToken();
+    this.router.events.subscribe((val: any) => {
+      if (val.url) {
+        if (this.getToken()) {
+          this.isLogged = true;
+        } else {
+          this.isLogged = false;
+        }
+      }
+    });
   }
   getToken() {
     this.token = sessionStorage.getItem('token');
