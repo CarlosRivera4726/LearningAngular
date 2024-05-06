@@ -10,6 +10,6 @@ export const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'users', component: UserListComponent },
   { path: 'users/create', component: UserFormComponent },
-  { path: 'users/:id', component: UserFormComponent },
+  { path: 'users/edit/:id', component: UserFormComponent },
   { path: '**', redirectTo: 'home' },
 ];

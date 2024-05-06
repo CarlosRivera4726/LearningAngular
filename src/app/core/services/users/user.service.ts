@@ -29,6 +29,14 @@ export class UserService {
     }
   }
 
+  getUser(id: string): Observable<IUser> {
+    return this.http.get<IUser>(`${this.url}/${id}`, this.options);
+  }
+
+  updateUser(id: string, user: IUser): Observable<IUser> {
+    return this.http.patch<IUser>(`${this.url}/${id}`, user, this.options);
+  }
+
   addUser(user: IUser) {
     return this.http.post<IUser>(this.url, user, this.options);
   }
