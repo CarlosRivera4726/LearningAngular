@@ -21,7 +21,12 @@ export class UserService {
   }
 
   getUsers(): Observable<IUser[]> {
-    return this.http.get<IUser[]>(this.url, this.options);
+    try {
+      return this.http.get<IUser[]>(this.url, this.options);
+    } catch (error) {
+      console.error('UN ERROR EN EL SERVICIO: ' + error);
+      return new Observable<IUser[]>();
+    }
   }
 
   addUser(user: IUser) {

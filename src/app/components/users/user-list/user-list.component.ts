@@ -22,23 +22,26 @@ import { UnauthorizedComponent } from '../../unauthorized/unauthorized.component
 })
 export class UserListComponent implements OnInit {
   token = sessionStorage.getItem('token');
-  users!: IUser[];
+  users: IUser[] | null = null;
   ngOnInit(): void {
     this.getUsers();
   }
 
-  constructor(private userService: UserService) {}
+  constructor(private userService: UserService, private router: Router) {}
 
   getUsers(): void {
-    this.userService.getUsers().subscribe({
-      next: (users) => {
-        this.users = users;
-      },
-      error: (err) => {
-        console.error(err);
-        this.users = [];
-      },
-    });
+    if (!this.token) {
+      this.router.navigate(['/unauthorized']);
+    } else {
+      this.userService.getUsers().subscribe({
+        next: (users) => {
+          this.users = users;
+        },
+        error: (err) => {
+          this.users = null;
+        },
+      });
+    }
   }
 
   deleteUser(id: string): void {

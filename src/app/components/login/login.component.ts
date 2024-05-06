@@ -36,23 +36,23 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit() {
-    if (!this.formLogin.valid) {
-      alert('Please fill all the required fields');
-    }
-
     this.userServie.login(this.formLogin.value).subscribe({
       next: (data) => {
         sessionStorage.setItem('token', data.Authorization);
         localStorage.setItem('name', data.data.name);
         localStorage.setItem('email', data.data.email);
+        localStorage.setItem('role', data.data.role);
         if (this.verifyLogin.verifyLogin()) {
-          setTimeout(() => {
-            this.router.navigate(['/users']);
-          }, 300);
+          setTimeout(async () => {
+            await this.router.navigate(['/users']);
+          }, 500);
         }
       },
       error: (error) => {
-        alert('Error');
+        alert(
+          'El usuario no se encuentra registrado o la contraseña no es valida'
+        );
+        console.error(error);
       },
     });
   }

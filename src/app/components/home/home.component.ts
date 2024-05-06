@@ -12,6 +12,7 @@ import { Component, OnInit } from '@angular/core';
 export class HomeComponent {
   name = localStorage.getItem('name');
   email = localStorage.getItem('email');
+  role = localStorage.getItem('role');
   constructor() {}
   realTime = Date.now();
 }

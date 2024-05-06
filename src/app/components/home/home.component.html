@@ -1,11 +1,8 @@
 @if(name || email){
 <div class="cursor-default m-auto justify-center items-center mt-48 flex">
   <a
-    class="m-auto block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700"
-  >
-    <h5
-      class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
-    >
+    class="m-auto block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
+    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
       SESIÓN INICIADA CÓMO
     </h5>
     <ul class="text-yellow-300">
@@ -16,6 +13,10 @@
       <li>
         <span class="font-bold dark:text-white text-gray-700">Correo:</span>
         {{ email }}
+      </li>
+      <li>
+        <span class="font-bold dark:text-white text-gray-700">Rol:</span>
+        {{ role }}
       </li>
       <li>
         <span class="font-bold dark:text-white text-gray-700">Hora:</span>
