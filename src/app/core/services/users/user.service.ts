@@ -21,12 +21,7 @@ export class UserService {
   }
 
   getUsers(): Observable<IUser[]> {
-    try {
-      return this.http.get<IUser[]>(this.url, this.options);
-    } catch (error) {
-      console.error('UN ERROR EN EL SERVICIO: ' + error);
-      return new Observable<IUser[]>();
-    }
+    return this.http.get<IUser[]>(this.url, this.options);
   }
 
   getUser(id: string): Observable<IUser> {

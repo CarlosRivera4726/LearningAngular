@@ -21,13 +21,14 @@ import { UnauthorizedComponent } from '../../unauthorized/unauthorized.component
   styleUrl: './user-list.component.less',
 })
 export class UserListComponent implements OnInit {
+  constructor(private userService: UserService, private router: Router) {}
+
   token = sessionStorage.getItem('token');
   users: IUser[] | null = null;
+
   ngOnInit(): void {
     this.getUsers();
   }
-
-  constructor(private userService: UserService, private router: Router) {}
 
   getUsers(): void {
     if (!this.token) {
@@ -39,6 +40,9 @@ export class UserListComponent implements OnInit {
         },
         error: (err) => {
           this.users = null;
+        },
+        complete: () => {
+          this.ngOnInit();
         },
       });
     }
