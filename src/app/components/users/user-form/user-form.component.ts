@@ -42,6 +42,10 @@ export class UserFormComponent implements OnInit {
   ngOnInit(): void {
     this.userForm = new FormGroup({
       name: new FormControl('', [Validators.required, Validators.minLength(3)]),
+      lastName: new FormControl('', [
+        Validators.required,
+        Validators.minLength(3),
+      ]),
       email: new FormControl('', [Validators.required, Validators.email]),
       password: new FormControl('', [
         Validators.required,
