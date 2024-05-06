@@ -95,7 +95,7 @@ export class UserFormComponent implements OnInit {
           } else {
             this.router.navigate(['/login']);
           }
-        }, 300);
+        }, 600);
       },
       error: (error) => {
         this.message = 'Error al agregar el usuario';
