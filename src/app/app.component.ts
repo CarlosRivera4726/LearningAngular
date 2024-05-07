@@ -3,7 +3,7 @@ import { RouterOutlet } from '@angular/router';
 import { initFlowbite } from 'flowbite';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { FooterComponent } from './components/footer/footer.component';
-import { FormGroup, FormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -13,7 +13,7 @@ import { FormGroup, FormsModule } from '@angular/forms';
   styleUrl: './app.component.less',
 })
 export class AppComponent implements OnInit {
-  title = 'my-app';
+  title = 'Tech Store';
   name = localStorage.getItem('name');
   email = localStorage.getItem('email');
 

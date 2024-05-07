@@ -1,10 +1,11 @@
 import { DatePipe } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
+import { ProductListComponent } from '../products/product-list/product-list.component';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [DatePipe],
+  imports: [DatePipe, ProductListComponent],
   providers: [],
   templateUrl: './home.component.html',
   styleUrl: './home.component.less',

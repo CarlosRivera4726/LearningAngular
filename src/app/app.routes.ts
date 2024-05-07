@@ -5,6 +5,7 @@ import { LoginComponent } from './components/login/login.component';
 import { verifyLoginGuard } from './core/guard/verify-login/verify-login.guard';
 import { verifyRoleGuard } from './core/guard/verify-role/verify-role.guard';
 import { UserListComponent } from './components/users/user-list/user-list.component';
+import { ProductFormComponent } from './components/products/product-form/product-form.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -29,5 +30,6 @@ export const routes: Routes = [
     component: UserFormComponent,
     canActivate: [verifyLoginGuard, verifyRoleGuard],
   },
+  { path: 'product/create', component: ProductFormComponent },
   { path: '**', redirectTo: 'home' },
 ];
