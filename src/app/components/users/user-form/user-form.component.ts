@@ -12,7 +12,7 @@ import { UserService } from '../../../core/services/users/user.service';
 import { MessageComponent } from '../../messages/message/message.component';
 import { JsonPipe, NgStyle } from '@angular/common';
 import { ActivatedRoute, Router } from '@angular/router';
-import { LoginVerifyService } from '../../../core/services/login/login-verify.service';
+import { LoginService } from '../../../core/services/login/login.service';
 @Component({
   selector: 'app-user-form',
   standalone: true,
@@ -31,7 +31,7 @@ export class UserFormComponent implements OnInit {
   constructor(
     private userService: UserService,
     private formBuilder: FormBuilder,
-    private verifyLogin: LoginVerifyService,
+    private verifyLogin: LoginService,
     private router: Router,
     private route: ActivatedRoute
   ) {}
@@ -49,6 +49,11 @@ export class UserFormComponent implements OnInit {
   ngOnInit(): void {
     this.id = this.route.snapshot.params['id'];
     this.isAddMode = !this.id;
+
+    if (this.router.url.includes('register')) {
+      this.isAddMode = true;
+      this.title = 'Registro de Usuario';
+    }
 
     console.log('isAddMode: ', this.isAddMode);
 

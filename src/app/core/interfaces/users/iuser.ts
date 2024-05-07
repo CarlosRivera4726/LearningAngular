@@ -8,8 +8,8 @@ export interface IUser {
 }
 
 export enum Rol {
-  USER,
-  ADMIN,
-  SELLER,
-  CUSTOMER,
+  USER = 'USER',
+  ADMIN = 'ADMIN',
+  SELLER = 'SELLER',
+  CUSTOMER = 'CUSTOMER',
 }

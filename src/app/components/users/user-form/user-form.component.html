@@ -37,11 +37,11 @@
     <div class="mb-3 relative">
       <select name="role" formControlName="role" id="underline_select"
         class="mb-3 block px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent rounded-lg border-1 border-b-slate-900 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer">
-        @if(role==='USER' || role==='CUSTOMER' ||
-        role==='SELLER' ){
+        @if(!role){
         <option selected>Seleccione su rol</option>
         <option value="USER">Usuario</option>
-        } @else if(role === 'ADMIN'){
+        }
+        @if(role === 'ADMIN'){
         <option selected>Seleccione su rol</option>
         <option value="USER">Usuario</option>
         <option value="ADMIN">Administrador</option>

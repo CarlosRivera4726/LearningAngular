@@ -8,17 +8,18 @@ import { IUserLogin } from '../../interfaces/users/iUserLogin';
   providedIn: 'root',
 })
 export class UserService {
-  options = {
-    headers: {
-      Authorization: 'Bearer ' + sessionStorage.getItem('token'),
-    },
-  };
-  private url: string = 'http://localhost:3000/users';
-  constructor(private http: HttpClient) {}
-
-  login(user: IUserLogin): Observable<any> {
-    return this.http.post<any>('http://localhost:3000/auth/login', user);
+  constructor(private http: HttpClient) {
+    this.options = {
+      headers: {
+        Authorization: sessionStorage.getItem('token')
+          ? 'Bearer ' + sessionStorage.getItem('token')
+          : '',
+      },
+    };
   }
+
+  options = {};
+  private url: string = 'http://localhost:3000/users';
 
   getUsers(): Observable<IUser[]> {
     return this.http.get<IUser[]>(this.url, this.options);

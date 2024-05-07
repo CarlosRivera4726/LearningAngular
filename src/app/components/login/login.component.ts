@@ -8,7 +8,7 @@ import {
 } from '@angular/forms';
 import { Router, RouterLink } from '@angular/router';
 import { UserService } from '../../core/services/users/user.service';
-import { LoginVerifyService } from '../../core/services/login/login-verify.service';
+import { LoginService } from '../../core/services/login/login.service';
 
 @Component({
   selector: 'app-login',
@@ -18,11 +18,7 @@ import { LoginVerifyService } from '../../core/services/login/login-verify.servi
   styleUrl: './login.component.css',
 })
 export class LoginComponent implements OnInit {
-  constructor(
-    private userServie: UserService,
-    private router: Router,
-    private verifyLogin: LoginVerifyService
-  ) {}
+  constructor(private router: Router, private loginService: LoginService) {}
   formLogin!: FormGroup;
 
   ngOnInit(): void {
@@ -36,12 +32,12 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit() {
-    this.userServie.login(this.formLogin.value).subscribe({
-      next: async (data) => {
-        await sessionStorage.setItem('token', data.Authorization);
-        await localStorage.setItem('name', data.data.name);
-        await localStorage.setItem('email', data.data.email);
-        await localStorage.setItem('role', data.data.role);
+    this.loginService.login(this.formLogin.value).subscribe({
+      next: (data) => {
+        sessionStorage.setItem('token', data.Authorization);
+        localStorage.setItem('name', data.data.name);
+        localStorage.setItem('email', data.data.email);
+        localStorage.setItem('role', data.data.role);
       },
       error: (error) => {
         alert(
@@ -49,12 +45,7 @@ export class LoginComponent implements OnInit {
         );
         console.error(error);
       },
-      complete: () => {
-        if (this.verifyLogin.verifyLogin()) {
-          this.router.navigate(['/users']);
-        }
-        console.log('Complete');
-      },
     });
+    this.router.navigate(['/users']);
   }
 }
