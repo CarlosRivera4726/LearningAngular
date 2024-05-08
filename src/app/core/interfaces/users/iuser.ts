@@ -4,12 +4,10 @@ export interface IUser {
   lastName: string;
   email: string;
   password: string;
-  role: Rol;
+  roles: Rol[];
 }
 
-export enum Rol {
-  USER = 'USER',
-  ADMIN = 'ADMIN',
-  SELLER = 'SELLER',
-  CUSTOMER = 'CUSTOMER',
+export class Rol {
+  id!: string;
+  name?: string;
 }

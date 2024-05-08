@@ -1,9 +1,15 @@
 import { CanActivateFn } from '@angular/router';
-import { Rol } from '../../interfaces/users/iuser';
+
+enum Rol {
+  ADMIN = 'ADMINISTRADOR',
+  CUSTOMER = 'CLIENTE',
+  USER = 'USUARIO',
+  SELLER = 'VENDEDOR',
+}
 
 export const verifyRoleGuard: CanActivateFn = (route, state) => {
-  console.log(
-    localStorage.getItem('role') !== Rol.ADMIN.toString() ? false : true
-  );
-  return localStorage.getItem('role') !== Rol.ADMIN.toString() ? false : true;
+  console.log(localStorage.getItem('role') !== Rol.ADMIN ? false : true);
+  const role = localStorage.getItem('role') || '';
+  // verify if role string contains ADMIN
+  return role.includes(Rol.ADMIN);
 };

@@ -35,22 +35,16 @@
         class="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-[#ece6e6] dark:bg-[#212733] px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1">Email</label>
     </div>
     <div class="mb-3 relative">
-      <select name="role" formControlName="role" id="underline_select"
+      <select name="roles" id="underline_select" formControlName="roles"
         class="mb-3 block px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent rounded-lg border-1 border-b-slate-900 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer">
-        @if(!role){
         <option selected>Seleccione su rol</option>
-        <option value="USER">Usuario</option>
-        }
-        @if(role === 'ADMIN'){
-        <option selected>Seleccione su rol</option>
-        <option value="USER">Usuario</option>
-        <option value="ADMIN">Administrador</option>
-        <option value="SELLER">Vendedor</option>
-        <option value="CUSTOMER">Cliente</option>
+        @for(role of rolesToShow(); track $index){
+        <option value="{{role.id}}">{{role.name}}</option>
         }
       </select>
       <label for="underline_select"
         class="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-[#ece6e6] dark:bg-[#212733] px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1">Rol</label>
+
     </div>
     <div class="mb-3 relative">
       <input type="password" id="password" formControlName="password"

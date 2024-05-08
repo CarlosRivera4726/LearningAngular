@@ -59,4 +59,8 @@ export class UserListComponent implements OnInit {
       },
     });
   }
+
+  getUserRolesAsString(user: any): string {
+    return user.roles.map((roles: any) => roles.name).join(', ');
+  }
 }

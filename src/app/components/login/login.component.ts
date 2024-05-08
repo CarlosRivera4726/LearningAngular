@@ -33,11 +33,17 @@ export class LoginComponent implements OnInit {
 
   onSubmit() {
     this.loginService.login(this.formLogin.value).subscribe({
-      next: (data) => {
-        sessionStorage.setItem('token', data.Authorization);
-        localStorage.setItem('name', data.data.name);
-        localStorage.setItem('email', data.data.email);
-        localStorage.setItem('role', data.data.role);
+      next: (login) => {
+        //console.log(login);
+        sessionStorage.setItem('token', login.Authorization);
+        localStorage.setItem('name', login.data.name);
+        localStorage.setItem('email', login.data.email);
+
+        const rolSepareted = login.data.roles
+          .map((roles: any) => roles.name)
+          .join(', ');
+        localStorage.setItem('role', rolSepareted);
+        this.router.navigate(['/users']);
       },
       error: (error) => {
         alert(
@@ -46,6 +52,5 @@ export class LoginComponent implements OnInit {
         console.error(error);
       },
     });
-    this.router.navigate(['/users']);
   }
 }

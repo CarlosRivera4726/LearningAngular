@@ -56,7 +56,7 @@
             {{ user.email }}
           </td>
           <td class="px-6 py-4 whitespace-nowrap dark:text-white">
-            {{ user.role }}
+            {{ getUserRolesAsString(user)}}
           </td>
           <td class="px-6 py-4 whitespace-nowrap dark:text-white">
             {{ user.password | changeChar }}
