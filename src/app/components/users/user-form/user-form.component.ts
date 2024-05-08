@@ -115,6 +115,7 @@ export class UserFormComponent implements OnInit {
 
     if (this.isAddMode) {
       const user = this.userForm.value;
+      user.roles = [{ id: this.userForm.value.roles }];
       this.addUser(user);
     } else {
       this.updateUser();
