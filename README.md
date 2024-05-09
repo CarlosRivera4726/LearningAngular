@@ -1,4 +1,6 @@
-# MyApp
+# TechStore
+Aplicación full stack desarrollada con angular del lado del frontend y nestjs del lado del backend usando prisma como orm y MySQL como gestor de bd.
+
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.5.
 
