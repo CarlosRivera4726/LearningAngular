@@ -39,7 +39,7 @@
         class="mb-3 block px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent rounded-lg border-1 border-b-slate-900 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer">
         <option value="" selected>SELECCIONE SU ROL</option>
         @for(role of rolesToShow(); track $index){
-        <option value="{{role.id}}">{{role.name}}</option>
+        <option value="{{role.name}}">{{role.name}}</option>
         }
       </select>
       <label for="underline_select"
