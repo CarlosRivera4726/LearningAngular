@@ -6,11 +6,15 @@ import { ChangeCharPipe } from '../../../core/pipes/change-char.pipe';
 import { LimitCharPipe } from '../../../core/pipes/limit-char.pipe';
 import { CommonModule, JsonPipe } from '@angular/common';
 import { UnauthorizedComponent } from '../../unauthorized/unauthorized.component';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   selector: 'app-user-list',
   standalone: true,
   imports: [
+    MatButtonModule,
+    MatIconModule,
     CommonModule,
     RouterLink,
     ChangeCharPipe,

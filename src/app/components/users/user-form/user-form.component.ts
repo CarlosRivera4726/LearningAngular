@@ -1,11 +1,8 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import {
-  ControlValueAccessor,
   FormBuilder,
-  FormControl,
   FormGroup,
   FormsModule,
-  NG_VALUE_ACCESSOR,
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
