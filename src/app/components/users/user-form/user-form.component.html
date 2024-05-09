@@ -5,12 +5,8 @@
 <div class="mt-10">
   <form class="max-w-sm mx-auto" [formGroup]="userForm" (ngSubmit)="onSubmit()">
     <div class="mb-0">
-      @if(isSubmitted && userForm.invalid) {
-      <app-message styles={{style}} message={{message}} (event)="onClose($event)" />
-      }
-      @if(message) {
-      <app-message styles={{style}} message="{{message}}" />
-      }
+      <!--Show the alerts that correspond-->
+
     </div>
 
     <div class="mb-3 relative">

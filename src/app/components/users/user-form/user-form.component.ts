@@ -11,7 +11,6 @@ import {
 } from '@angular/forms';
 import { IUser, Rol } from '../../../core/interfaces/users/iuser';
 import { UserService } from '../../../core/services/users/user.service';
-import { MessageComponent } from '../../messages/message/message.component';
 import { JsonPipe, NgStyle } from '@angular/common';
 import { ActivatedRoute, Router } from '@angular/router';
 import { LoginService } from '../../../core/services/login/login.service';
@@ -19,13 +18,7 @@ import { RolService } from '../../../core/services/roles/rol.service';
 @Component({
   selector: 'app-user-form',
   standalone: true,
-  imports: [
-    FormsModule,
-    ReactiveFormsModule,
-    MessageComponent,
-    NgStyle,
-    JsonPipe,
-  ],
+  imports: [FormsModule, ReactiveFormsModule, NgStyle, JsonPipe],
   providers: [UserService],
   templateUrl: './user-form.component.html',
   styleUrl: './user-form.component.less',
@@ -42,6 +35,7 @@ export class UserFormComponent implements OnInit {
   title: string = 'Agregar Usuario';
   userForm!: FormGroup;
   message: string = '';
+  isError!: boolean;
   style!: string;
   newUser!: IUser;
   id!: string;
@@ -122,13 +116,6 @@ export class UserFormComponent implements OnInit {
     }
   }
 
-  onClose(event: any) {
-    setInterval(() => {
-      this.message = '';
-      this.style = '';
-    }, 500);
-  }
-
   updateUser() {
     const user: IUser = {
       ...this.userForm.value,
@@ -148,9 +135,10 @@ export class UserFormComponent implements OnInit {
 
   addUser(newUser: IUser) {
     console.log(newUser);
-    newUser.roles = [{ id: this.userForm.value.roles }];
+    //newUser.roles.push({ id: this.userForm.value.roles });
     this.userService.addUser(newUser).subscribe({
       next: (data) => {
+        this.isError = false;
         this.message = 'Usuario agregado correctamente!';
         this.style =
           'p-4 mb-4 text-sm text-green-800 rounded-lg bg-green-50 dark:bg-gray-800 dark:text-green-300';
@@ -163,9 +151,11 @@ export class UserFormComponent implements OnInit {
         }, 600);
       },
       error: (error) => {
-        this.message = 'Error al agregar el usuario';
+        console.log(error);
+        this.isError = true;
+        this.message = 'Error al agregar el usuario: ' + error.headers.message;
         this.style =
-          'p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-300';
+          'p-4 mb-4 text-sm text-green-800 rounded-lg bg-green-50 dark:bg-gray-800 dark:text-green-300';
       },
     });
   }
