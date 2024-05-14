@@ -8,6 +8,7 @@ import { CommonModule, JsonPipe } from '@angular/common';
 import { UnauthorizedComponent } from '../../unauthorized/unauthorized.component';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 @Component({
   selector: 'app-user-list',
@@ -21,6 +22,7 @@ import { MatIconModule } from '@angular/material/icon';
     LimitCharPipe,
     JsonPipe,
     UnauthorizedComponent,
+    MatProgressSpinnerModule,
   ],
   templateUrl: './user-list.component.html',
   styleUrl: './user-list.component.less',
