@@ -7,6 +7,13 @@ module.exports = {
   darkMode: "media", // or 'media' or 'class'
   theme: {
     extend: {},
+    screen: {
+      'sm': '640px',
+      'md': '768px',
+      'lg': '1050px',
+      'xl': '1024px',
+      '2xl': '1280px',
+    }
   },
   plugins: [
     require('flowbite/plugin')
