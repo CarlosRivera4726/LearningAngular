@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { initFlowbite } from 'flowbite';
 import { NavbarComponent } from './components/navbar/navbar.component';
@@ -20,7 +20,7 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
   templateUrl: './app.component.html',
   styleUrl: './app.component.less',
 })
-export class AppComponent implements OnInit {
+export class AppComponent implements OnInit, AfterViewInit {
   title = 'Tech Store';
   name = localStorage.getItem('name');
   email = localStorage.getItem('email');
@@ -28,6 +28,10 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
     initFlowbite();
     this.verifyIfLogged();
+  }
+
+  ngAfterViewInit(): void {
+    initFlowbite();
   }
 
   verifyIfLogged() {

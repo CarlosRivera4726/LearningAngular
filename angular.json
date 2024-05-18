@@ -34,9 +34,13 @@
             ],
             "styles": [
               "src/styles.css",
-              "@angular/material/prebuilt-themes/pink-bluegrey.css"
+              "@angular/material/prebuilt-themes/pink-bluegrey.css",
+              "node_modules/tailwindcss/tailwind.css",
+              "node_modules/flowbite/dist/flowbite.css"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/flowbite/dist/flowbite.js"
+            ]
           },
           "configurations": {
             "production": {
