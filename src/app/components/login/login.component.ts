@@ -43,7 +43,11 @@ export class LoginComponent implements OnInit {
           .map((roles: any) => roles.name)
           .join(', ');
         localStorage.setItem('role', rolSepareted);
-        this.router.navigate(['/users']);
+        if (rolSepareted.includes('ADMINISTRADOR')) {
+          this.router.navigate(['/users']);
+        } else {
+          this.router.navigate(['/home']);
+        }
       },
       error: (error) => {
         alert(

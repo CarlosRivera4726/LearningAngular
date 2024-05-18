@@ -32,13 +32,14 @@ export class UserListComponent implements OnInit {
 
   token = sessionStorage.getItem('token');
   users: IUser[] | null = null;
+  role = sessionStorage.getItem('role');
 
   ngOnInit(): void {
     this.getUsers();
   }
 
   getUsers(): void {
-    if (!this.token) {
+    if (!this.token || this.role?.includes('ADMINISTRADOR')) {
       this.router.navigate(['/unauthorized']);
     } else {
       this.userService.getUsers().subscribe({

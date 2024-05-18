@@ -12,6 +12,7 @@ export class NavbarComponent implements OnInit {
   constructor(private router: Router) {}
   token: string | null = null;
   isLogged: boolean = false;
+  readonly role = localStorage.getItem('role');
   ngOnInit(): void {
     this.router.events.subscribe((val: any) => {
       if (val.url) {
@@ -35,5 +36,8 @@ export class NavbarComponent implements OnInit {
     localStorage.removeItem('role');
     this.isLogged = false;
     this.router.navigate(['/login']);
+  }
+  isAdministrator(): boolean {
+    return this.role?.includes('ADMINISTRADOR') || false;
   }
 }

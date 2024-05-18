@@ -116,7 +116,7 @@ export class UserFormComponent implements OnInit {
   updateUser() {
     const user: IUser = {
       ...this.userForm.value,
-      roles: [{ id: this.userForm.value.roles }],
+      roles: [{ name: this.userForm.value.roles }],
     };
     this.userService.updateUser(this.id, user).subscribe({
       next: (data: IUser) => {

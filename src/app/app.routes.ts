@@ -2,7 +2,10 @@ import { Routes } from '@angular/router';
 import { HomeComponent } from './components/home/home.component';
 import { UserFormComponent } from './components/users/user-form/user-form.component';
 import { LoginComponent } from './components/login/login.component';
-import { verifyLoginGuard } from './core/guard/verify-login/verify-login.guard';
+import {
+  LoggedInAuthGuard,
+  verifyLoginGuard,
+} from './core/guard/verify-login/verify-login.guard';
 import { verifyRoleGuard } from './core/guard/verify-role/verify-role.guard';
 import { UserListComponent } from './components/users/user-list/user-list.component';
 import { ProductFormComponent } from './components/products/product-form/product-form.component';
@@ -10,19 +13,23 @@ import { ProductFormComponent } from './components/products/product-form/product
 export const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
-  { path: 'login', component: LoginComponent },
+  {
+    path: 'login',
+    component: LoginComponent,
+    canActivate: [LoggedInAuthGuard],
+  },
   {
     path: 'users',
     component: UserListComponent,
     canActivate: [verifyLoginGuard, verifyRoleGuard],
   },
   {
-    path: 'users/create',
+    path: 'user/create',
     component: UserFormComponent,
     canActivate: [verifyRoleGuard],
   },
   {
-    path: 'users/register',
+    path: 'user/register',
     component: UserFormComponent,
   },
   {

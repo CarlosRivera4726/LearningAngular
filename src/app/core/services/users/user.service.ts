@@ -30,6 +30,8 @@ export class UserService {
   }
 
   updateUser(id: string, user: IUser): Observable<IUser> {
+    console.info('user', user);
+
     return this.http.patch<IUser>(`${this.url}/${id}`, user, this.options);
   }
 

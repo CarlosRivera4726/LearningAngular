@@ -1,45 +1,50 @@
-@defer (on timer(1000)) {
-
-@if(!token){
+@defer (on timer(100)) { @if(!token){
 <app-unauthorized></app-unauthorized>
 }@else {
 
-<h1 class="pt-10 text-black dark:text-white font-bold text-2xl text-center uppercase ">
-  Lista de Usuarios</h1>
+<h1
+  class="pt-10 text-black dark:text-white font-bold text-2xl text-center uppercase"
+>
+  Lista de Usuarios
+</h1>
 <div class="w-5/6 block content-center items-center m-auto mb-[13.5rem]">
   <div class="relative m-auto overflow-x-auto">
-    <button type="button"
+    <button
+      type="button"
       class="flex focus:outline-none text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"
-      [routerLink]="['/users/create']">
-      <svg class="flex w-8 h-5  text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="12" height="12"
-        fill="currentColor" viewBox="0 0 24 24">
-        <path fill-rule="evenodd"
+      [routerLink]="['/user/create']"
+    >
+      <svg
+        class="flex w-8 h-5 text-white"
+        aria-hidden="true"
+        xmlns="http://www.w3.org/2000/svg"
+        width="12"
+        height="12"
+        fill="currentColor"
+        viewBox="0 0 24 24"
+      >
+        <path
+          fill-rule="evenodd"
           d="M9 4a4 4 0 1 0 0 8 4 4 0 0 0 0-8Zm-2 9a4 4 0 0 0-4 4v1a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2v-1a4 4 0 0 0-4-4H7Zm8-1a1 1 0 0 1 1-1h1v-1a1 1 0 1 1 2 0v1h1a1 1 0 1 1 0 2h-1v1a1 1 0 1 1-2 0v-1h-1a1 1 0 0 1-1-1Z"
-          clip-rule="evenodd" />
+          clip-rule="evenodd"
+        />
       </svg>
-      Crear Usuario</button>
+      Crear Usuario
+    </button>
     @if(users){
-    <table class="m-auto  rounded-xl w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
-      <thead class="rounded-full text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+    <table
+      class="m-auto rounded-xl w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400"
+    >
+      <thead
+        class="rounded-full text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400"
+      >
         <tr>
-          <th scope="col" class="px-6 py-3">
-            ID
-          </th>
-          <th scope="col" class="px-6 py-3">
-            NOMBRE
-          </th>
-          <th scope="col" class="px-6 py-3">
-            EMAIL
-          </th>
-          <th scope="col" class="px-6 py-3">
-            ROL
-          </th>
-          <th scope="col" class="px-6 py-3">
-            CONTRASEÑA
-          </th>
-          <th scope="col" class="px-6 py-3">
-            OPCIONES
-          </th>
+          <th scope="col" class="px-6 py-3">ID</th>
+          <th scope="col" class="px-6 py-3">NOMBRE</th>
+          <th scope="col" class="px-6 py-3">EMAIL</th>
+          <th scope="col" class="px-6 py-3">ROL</th>
+          <th scope="col" class="px-6 py-3">CONTRASEÑA</th>
+          <th scope="col" class="px-6 py-3">OPCIONES</th>
         </tr>
       </thead>
       <tbody>
@@ -55,54 +60,65 @@
             {{ user.email }}
           </td>
           <td class="px-6 py-4 whitespace-nowrap dark:text-white">
-            {{ getUserRolesAsString(user)}}
+            {{ getUserRolesAsString(user) }}
           </td>
           <td class="px-6 py-4 whitespace-nowrap dark:text-white">
             {{ user.password | changeChar }}
           </td>
-          <td class="px-2 py-5 whitespace-nowrap justify-between dark:text-white">
-            <button routerLink="/users/edit/{{user.id}}" mat-fab aria-label="Edit button">
+          <td
+            class="px-2 py-5 whitespace-nowrap justify-between dark:text-white"
+          >
+            <button
+              routerLink="/users/edit/{{ user.id }}"
+              mat-fab
+              aria-label="Edit button"
+            >
               <mat-icon>edit</mat-icon>
             </button>
 
             <span class="m-1"></span>
-            <button (click)="deleteUser(user.id)" mat-fab color="primary" aria-label="Delete button">
+            <button
+              (click)="deleteUser(user.id)"
+              mat-fab
+              color="primary"
+              aria-label="Delete button"
+            >
               <mat-icon>delete</mat-icon>
             </button>
-
           </td>
         </tr>
         }
-
       </tbody>
     </table>
     }@else{
     <div class="flex items-center justify-center">
       <div class="flex flex-col items-center justify-center">
-        <svg class="w-16 h-16 text-gray-400 dark:text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-          xmlns="http://www.w3.org/2000/svg">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
+        <svg
+          class="w-16 h-16 text-gray-400 dark:text-gray-500"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M12 6v6m0 0v6m0-6h6m-6 0H6"
+          ></path>
         </svg>
-        <p class="text-lg text-gray-400 dark:text-gray-500">No hay usuarios registrados</p>
+        <p class="text-lg text-gray-400 dark:text-gray-500">
+          No hay usuarios registrados
+        </p>
       </div>
     </div>
     }
   </div>
-
-
 </div>
 
-}
-
-}@placeholder {
+} }@placeholder {
 <!--Create a loadin-->
 <div class="ml-[700px] mt-[200px] mb-[200px]">
   <mat-spinner class="flex text-center items-center"></mat-spinner>
 </div>
-<style>
-  footer {
-    display: fixed;
-    bottom: 0;
-  }
-</style>
 }
