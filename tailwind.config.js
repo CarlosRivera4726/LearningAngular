@@ -13,6 +13,9 @@ module.exports = {
       'lg': '1050px',
       'xl': '1024px',
       '2xl': '1280px',
+    },
+    colors: {
+      'main-dark': '#111827'
     }
   },
   plugins: [

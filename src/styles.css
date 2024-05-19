@@ -47,8 +47,6 @@ footer{
 @media (prefers-color-scheme: dark) {
   body {
     background-color: #212733;
-    
-    min-height: 100vh;
   }
   /* Estilo general para la scrollbar */
   ::-webkit-scrollbar {
@@ -75,6 +73,3 @@ footer{
   }
 }
 
-
-
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;  min-height: 100vh;}
