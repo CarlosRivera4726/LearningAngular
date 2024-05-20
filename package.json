@@ -20,6 +20,8 @@
     "@angular/platform-browser": "17.3.8",
     "@angular/platform-browser-dynamic": "17.3.8",
     "@angular/router": "17.3.8",
+    "@cloudinary/ng": "^2.0.2",
+    "@cloudinary/url-gen": "^1.19.0",
     "aws-sdk": "2.1616.0",
     "flowbite": "2.3.0",
     "multer": "1.4.5-lts.1",
