@@ -1,5 +1,6 @@
 import { Component, OnChanges, OnInit } from '@angular/core';
 import { Router, RouterLink, RouterLinkActive } from '@angular/router';
+import { initFlowbite } from 'flowbite';
 
 @Component({
   selector: 'app-navbar',
@@ -14,6 +15,7 @@ export class NavbarComponent implements OnInit {
   isLogged: boolean = false;
   readonly role = localStorage.getItem('role');
   ngOnInit(): void {
+    initFlowbite();
     this.router.events.subscribe((val: any) => {
       if (val.url) {
         if (this.getToken()) {
