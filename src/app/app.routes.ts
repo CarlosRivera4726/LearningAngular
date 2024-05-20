@@ -9,6 +9,7 @@ import {
 import { verifyRoleGuard } from './core/guard/verify-role/verify-role.guard';
 import { UserListComponent } from './components/users/user-list/user-list.component';
 import { ProductFormComponent } from './components/products/product-form/product-form.component';
+import { UploadImagesComponent } from './components/upload-images/upload-images.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -38,5 +39,6 @@ export const routes: Routes = [
     canActivate: [verifyLoginGuard, verifyRoleGuard],
   },
   { path: 'product/create', component: ProductFormComponent },
+  { path: 'upload', component: UploadImagesComponent },
   { path: '**', redirectTo: 'home' },
 ];

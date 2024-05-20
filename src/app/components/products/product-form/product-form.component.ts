@@ -7,12 +7,20 @@ import {
   Validators,
 } from '@angular/forms';
 import { ProductsService } from '../../../core/services/products/products.service';
-import { UploadImageComponent } from '../../upload-image/upload-image.component';
+import { fill } from '@cloudinary/url-gen/actions/resize';
+import { CloudinaryModule } from '@cloudinary/ng';
+import { Cloudinary, CloudinaryImage } from '@cloudinary/url-gen';
+import { UploadImagesComponent } from '../../upload-images/upload-images.component';
 
 @Component({
   selector: 'app-product-form',
   standalone: true,
-  imports: [FormsModule, ReactiveFormsModule],
+  imports: [
+    FormsModule,
+    ReactiveFormsModule,
+    CloudinaryModule,
+    UploadImagesComponent,
+  ],
   templateUrl: './product-form.component.html',
   styleUrl: './product-form.component.css',
 })
@@ -21,6 +29,7 @@ export class ProductFormComponent implements OnInit {
 
   @Input()
   productForm!: FormGroup;
+
   ngOnInit(): void {
     this.productForm = new FormGroup({
       name: new FormControl('', [Validators.required, Validators.minLength(3)]),

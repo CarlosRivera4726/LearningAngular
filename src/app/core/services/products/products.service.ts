@@ -2,11 +2,13 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { IProduct } from '../../interfaces/products/iproduct';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ProductsService {
+  photos: any;
   products: IProduct[] = [];
   options = {};
   constructor(private http: HttpClient) {
@@ -28,5 +30,15 @@ export class ProductsService {
       'http://localhost:3000/product',
       this.options
     );
+  }
+
+  getData(tag: string): void {
+    this.http
+      .get(
+        `https://res.cloudinary.com/${environment.CLOUD_NAME}/image/list/${tag}.json`
+      )
+      .subscribe((data: any) => {
+        this.photos = data.resources;
+      });
   }
 }
