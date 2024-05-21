@@ -3,14 +3,23 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 @font-face {
   font-family: 'RobotoUI';
   src: url('assets/fonts/Roboto/Roboto-Regular.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
+:root{
+  color-scheme: light dark;
+}
 *{
   font-family: 'RobotoUI';
+  color-scheme: light dark;
+
+}
+html{
+  scroll-behavior: smooth;
 }
 body{
   background-color: #ece6e6;

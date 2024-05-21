@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es" class="dark">
+<html lang="es">
 
 <head>
   <meta charset="utf-8" />
@@ -15,5 +15,14 @@
 <body>
   <app-root></app-root>
 </body>
+<style is:global>
+  @tailwind base;
+  @tailwind components;
+  @tailwind utilities;
+
+  :root {
+    color-scheme: light dark;
+  }
+</style>
 
 </html>

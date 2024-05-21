@@ -4,7 +4,7 @@ module.exports = {
     "./src/**/*.{html,ts}",
     "./node_modules/flowbite/**/*.js" // add this line
   ],
-  darkMode: "selector", // or 'media' or 'class'
+  darkMode: "media", // or 'media' or 'class'
   theme: {
     extend: {},
     screen: {

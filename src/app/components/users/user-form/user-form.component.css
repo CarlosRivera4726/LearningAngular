@@ -1,4 +1,8 @@
 /* si el botón está deshabilitado/disabled cambiar el color por uno opaco*/
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 button[disabled] {
   background-color: #ccc;
   color: #373737;

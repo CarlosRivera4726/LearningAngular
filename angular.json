@@ -34,8 +34,8 @@
             ],
             "styles": [
               "src/styles.css",
-              "@angular/material/prebuilt-themes/pink-bluegrey.css",
               "node_modules/tailwindcss/tailwind.css",
+              "@angular/material/prebuilt-themes/purple-green.css",
               "node_modules/flowbite/dist/flowbite.css"
             ],
             "scripts": [
@@ -99,7 +99,7 @@
             ],
             "styles": [
               "src/styles.css",
-              "@angular/material/prebuilt-themes/pink-bluegrey.css"
+              "@angular/material/prebuilt-themes/purple-green.css"
             ],
             "scripts": []
           }
