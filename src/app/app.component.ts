@@ -20,20 +20,14 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
   templateUrl: './app.component.html',
   styleUrl: './app.component.less',
 })
-export class AppComponent implements OnInit, AfterViewInit {
+export class AppComponent implements OnInit {
   title = 'Tech Store';
   name = localStorage.getItem('name');
   email = localStorage.getItem('email');
 
   ngOnInit(): void {
-    initFlowbite();
     this.verifyIfLogged();
   }
-
-  ngAfterViewInit(): void {
-    initFlowbite();
-  }
-
   verifyIfLogged() {
     if (!this.name && !this.email) {
       sessionStorage.removeItem('token');
