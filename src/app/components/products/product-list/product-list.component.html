@@ -5,22 +5,30 @@
 
 <div class="flex flex-wrap gap-5 ml-20 mt-5 h-full">
   @for (product of products; track $index) {
-  <div class="max-w-80 border border-solid border-white rounded-lg ">
-    <mat-card class="min-h-full">
+  <div class="max-w-80 border border-solid border-black dark:border-white rounded-lg ">
+    <mat-card class="min-h-full bg-main-light dark:bg-main-dark">
       <mat-card-header>
         <mat-card-title class="text-black dark:text-white uppercase">{{product.name}}</mat-card-title>
         <mat-card-subtitle class="text-black dark:text-white">{{product.seller.name}}
           {{product.seller.lastName}}</mat-card-subtitle>
       </mat-card-header>
-      <img class="" mat-card-image src="{{product.image}}" alt="{{product.name}}">
+      <img mat-card-xl-image src="{{product.image}}" alt="{{product.name}}">
       <mat-card-content>
         <p class="text-black dark:text-white">
           {{product.description}}
         </p>
       </mat-card-content>
-      <mat-card-actions>
-        <button mat-button>LIKE</button>
-        <button mat-button>SHARE</button>
+      <mat-card-actions class="justify-around">
+        <a class="cursor-pointer bg-blue-500 rounded-lg p-2 text-white font-bold hover:bg-blue-800">COMPRAR
+          AHORA</a>
+        <a
+          class="cursor-pointer bg-blue-600 rounded-lg p-2 flex text-white font-bold hover:bg-blue-700 hover:text-white">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" aria-hidden="true"
+            class="w-full h-6 text-white dark:text-white" viewBox="0 0 24 24">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M5 4h2l2 12m0 0h8m-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm-8-3h9l1-6h-1M8 7H7m6-2v4m-2-2h4" />
+          </svg>
+        </a>
       </mat-card-actions>
     </mat-card>
   </div>

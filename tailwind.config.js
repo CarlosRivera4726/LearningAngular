@@ -15,7 +15,8 @@ module.exports = {
       '2xl': '1280px',
     },
     colors: {
-      'main-dark': '#111827'
+      'main-dark': '#111827',
+      'main-light': '#ece6e6',
     }
   },
   plugins: [
