@@ -28,7 +28,10 @@ export class UploadImagesComponent {
     }
     if (result && result.event === 'success') {
       const secureUrl = result.info.secure_url;
-      const previewUrl = secureUrl.replace('/upload/', '/upload/w_400/');
+      const previewUrl = secureUrl.replace(
+        '/upload/',
+        '/upload/c_scale,h_200,w_200/'
+      );
       this.urlIMG.emit(previewUrl);
       this.uploadedImages.push(previewUrl);
       this.isDisabled = false;
