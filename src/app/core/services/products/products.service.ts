@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { IProduct } from '../../interfaces/products/iproduct';
-import { environment } from '../../environments/environment';
+import { SERVER_URL_DEPLOY, environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root',
@@ -27,7 +27,7 @@ export class ProductsService {
   }
   getProducts(): Observable<IProduct[]> {
     return this.http.get<IProduct[]>(
-      'http://localhost:3000/product',
+      `${SERVER_URL_DEPLOY}/product`,
       this.options
     );
   }

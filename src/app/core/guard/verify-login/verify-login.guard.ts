@@ -9,7 +9,7 @@ export const verifyLoginGuard: CanActivateFn = (route, state) => {
 export const LoggedInAuthGuard: CanActivateFn = (route, state) => {
   const router = new Router();
   if (sessionStorage.getItem('token') ? true : false) {
-    router.navigate(['/dashboard']);
+    router.navigate(['/unauthorized']);
     return false;
   } else {
     return true;
