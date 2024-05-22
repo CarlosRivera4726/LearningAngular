@@ -52,7 +52,7 @@ export class ProductFormComponent implements OnInit {
   onSubmit() {
     //console.log(this.productForm.value);
     const product = this.productForm.value;
-    product.categories = { name: 'COMPUTADORES' };
+    product.categories = [{ name: 'COMPUTADORES' }, { name: 'TECNOLOGIA'}];
     product.sellerId = localStorage.getItem('id');
     this.productService.addProduct(product).subscribe({
       next: (data) => {

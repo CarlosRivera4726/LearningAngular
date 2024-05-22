@@ -32,6 +32,7 @@ export class UploadImagesComponent {
       this.urlIMG.emit(previewUrl);
       this.uploadedImages.push(previewUrl);
       this.isDisabled = false;
+      alert('Image uploaded successfully');
     }
     if (error) {
       this.isDisabled = false;
@@ -47,10 +48,11 @@ export class UploadImagesComponent {
       {
         cloudName: this.cloudName,
         uploadPreset: this.uploadPreset,
-        sources: ['local', 'url'],
+        sources: ['local', 'web'],
         tags: [this.tag, 'products'],
         clientAllowedFormats: ['image'],
         resourceType: 'image',
+        multiple: false,
       },
       this.processResults
     );

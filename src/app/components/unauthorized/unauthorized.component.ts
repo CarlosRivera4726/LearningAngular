@@ -11,6 +11,6 @@ import { Router } from '@angular/router';
 export class UnauthorizedComponent {
   constructor(private router: Router) {}
   goBack() {
-    this.router.navigate(['/login']);
+    this.router.navigate(['/home']);
   }
 }
