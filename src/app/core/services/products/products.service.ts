@@ -22,6 +22,13 @@ export class ProductsService {
   setLocalProduct(product: IProduct) {
     this.products.push(product);
   }
+  addProduct(product: IProduct): Observable<IProduct> {
+    return this.http.post<IProduct>(
+      `${SERVER_URL_DEPLOY}/product`,
+      product,
+      this.options
+    );
+  }
   getLocalProducts(): IProduct[] {
     return this.products;
   }

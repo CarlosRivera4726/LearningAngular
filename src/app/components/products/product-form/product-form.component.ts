@@ -50,7 +50,23 @@ export class ProductFormComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log(this.productForm.value);
-    //this.productService.setLocalProduct(this.productForm.value);
+    //console.log(this.productForm.value);
+    const product = this.productForm.value;
+    product.categories = { name: 'COMPUTADORES' };
+    product.sellerId = localStorage.getItem('id');
+    this.productService.addProduct(product).subscribe({
+      next: (data) => {
+        this.productForm.reset();
+        alert('Product added successfully');
+      },
+      error: (error) => {
+        console.log(error);
+        alert('There was an error adding the product');
+      },
+    });
+  }
+
+  gettingUrl(event: any) {
+    this.productForm.controls['image'].setValue(event);
   }
 }

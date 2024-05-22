@@ -36,7 +36,7 @@
       <div class="relative z-0 w-full mb-5 group">
         <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" for="user_avatar">Imagen del
           producto</label>
-        <app-upload-images></app-upload-images>
+        <app-upload-images (urlIMG)="gettingUrl($event)"></app-upload-images>
         <div class="mt-1 mb-4 text-sm text-gray-500 dark:text-gray-300" id="user_avatar_help">
           La imagen se usa para que el cliente sepa que producto está comprando
         </div>

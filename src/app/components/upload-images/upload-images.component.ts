@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { CloudinaryModule } from '@cloudinary/ng';
 import { CommonModule } from '@angular/common';
 import { environment } from '../../core/environments/environment';
@@ -13,6 +13,7 @@ import { ScriptService } from '../../core/services/upload/script.service';
 })
 export class UploadImagesComponent {
   @Input() tag!: string;
+  @Output() urlIMG = new EventEmitter<string>();
   uploadedImage = '';
   isDisabled = false;
   uploadedImages: string[] = [];
@@ -28,6 +29,7 @@ export class UploadImagesComponent {
     if (result && result.event === 'success') {
       const secureUrl = result.info.secure_url;
       const previewUrl = secureUrl.replace('/upload/', '/upload/w_400/');
+      this.urlIMG.emit(previewUrl);
       this.uploadedImages.push(previewUrl);
       this.isDisabled = false;
     }

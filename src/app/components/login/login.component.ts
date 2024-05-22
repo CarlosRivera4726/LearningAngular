@@ -38,6 +38,7 @@ export class LoginComponent implements OnInit {
         sessionStorage.setItem('token', login.Authorization);
         localStorage.setItem('name', login.data.name);
         localStorage.setItem('email', login.data.email);
+        localStorage.setItem('id', login.data.id);
 
         const rolSepareted = login.data.roles
           .map((roles: any) => roles.name)
