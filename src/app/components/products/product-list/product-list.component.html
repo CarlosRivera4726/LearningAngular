@@ -16,7 +16,8 @@
         src="{{product.image}}" mat-card-lg-image alt="{{product.name}}">
 
       <mat-card-content class="text-black dark:text-white">
-        <p class="text-black dark:text-white"><span i18n>Precio:</span>{{product.price | currency }}</p>
+        <p class="text-black dark:text-white"><span i18n>Precio:</span> {{product.price | currency: "COP":
+          'symbol':'1.0-2'}}</p>
         <p class="text-black dark:text-white"><span i18n>Cantidad:</span>{{product.quantity}}</p>
       </mat-card-content>
 
