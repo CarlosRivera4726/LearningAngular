@@ -64,7 +64,7 @@ export class ProductFormComponent implements OnInit {
     product.sellerId = localStorage.getItem('id');
     this.productService.addProduct(product).subscribe({
       next: (data) => {
-        this.message = 'Producto añadido correctamente.';
+        this.message = $localize`Producto añadido correctamente.`;
         this.isError = false;
         this.showMessage = true;
         setTimeout(() => {
@@ -73,7 +73,7 @@ export class ProductFormComponent implements OnInit {
         this.productForm.reset();
       },
       error: (error) => {
-        this.message = 'El producto no pudo ser añadido.';
+        this.message = $localize`El producto no pudo ser añadido.`;
         this.showMessage = true;
         this.isError = true;
         setTimeout(() => {
