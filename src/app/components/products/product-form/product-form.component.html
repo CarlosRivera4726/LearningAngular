@@ -1,5 +1,13 @@
-<div class="mt-20">
-  <h1 class="text-black dark:text-white text-5xl font-bold text-center uppercase">
+<div class="flex justify-center">
+  @if(showMessage && !isError){
+  <app-success-alert [message]="message"></app-success-alert>
+  }@else if(showMessage && isError){
+  <app-error-alert [message]="message"></app-error-alert>
+  }
+</div>
+<div class="mt-20 justify-center">
+
+  <h1 class="text-black dark:text-white text-3xl font-bold text-center uppercase">
     Registrar Producto
   </h1>
   <div class="mt-5">

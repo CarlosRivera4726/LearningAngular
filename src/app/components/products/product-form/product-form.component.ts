@@ -11,6 +11,8 @@ import { fill } from '@cloudinary/url-gen/actions/resize';
 import { CloudinaryModule } from '@cloudinary/ng';
 import { Cloudinary, CloudinaryImage } from '@cloudinary/url-gen';
 import { UploadImagesComponent } from '../../upload-images/upload-images.component';
+import { ErrorAlertComponent } from '../../messages/error-alert/error-alert.component';
+import { SuccessAlertComponent } from '../../messages/success-alert/success-alert.component';
 
 @Component({
   selector: 'app-product-form',
@@ -20,12 +22,18 @@ import { UploadImagesComponent } from '../../upload-images/upload-images.compone
     ReactiveFormsModule,
     CloudinaryModule,
     UploadImagesComponent,
+    ErrorAlertComponent,
+    SuccessAlertComponent,
   ],
   templateUrl: './product-form.component.html',
   styleUrl: './product-form.component.css',
 })
 export class ProductFormComponent implements OnInit {
   constructor(private productService: ProductsService) {}
+
+  protected message: string = '';
+  protected showMessage: boolean = false;
+  protected isError: boolean = false;
 
   @Input()
   productForm!: FormGroup;
@@ -52,16 +60,26 @@ export class ProductFormComponent implements OnInit {
   onSubmit() {
     //console.log(this.productForm.value);
     const product = this.productForm.value;
-    product.categories = [{ name: 'COMPUTADORES' }, { name: 'TECNOLOGIA'}];
+    product.categories = [{ name: 'COMPUTADORES' }, { name: 'TECNOLOGIA' }];
     product.sellerId = localStorage.getItem('id');
     this.productService.addProduct(product).subscribe({
       next: (data) => {
+        this.message = 'Producto añadido correctamente.';
+        this.isError = false;
+        this.showMessage = true;
+        setTimeout(() => {
+          this.showMessage = false;
+        }, 5000);
         this.productForm.reset();
-        alert('Product added successfully');
       },
       error: (error) => {
-        console.log(error);
-        alert('There was an error adding the product');
+        this.message = 'El producto no pudo ser añadido.';
+        this.showMessage = true;
+        this.isError = true;
+        setTimeout(() => {
+          this.showMessage = false;
+          this.isError = false;
+        }, 5000);
       },
     });
   }
