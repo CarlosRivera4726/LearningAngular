@@ -5,9 +5,12 @@
   "projects": {
     "techstore": {
       "i18n": {
-        "sourceLocale": "es",
+        "sourceLocale": {"code": "es", "baseHref": "/"},
         "locales": {
-          "en": "src/locale/messages.en.xlf"
+          "en": {
+           "translation": "src/locale/messages.en.xlf",
+           "baseHref": "/en/"
+          }
         }
       },
       "projectType": "application",
