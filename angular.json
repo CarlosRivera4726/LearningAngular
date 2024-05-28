@@ -5,7 +5,7 @@
   "projects": {
     "techstore": {
       "i18n": {
-        "sourceLocale": {"code": "es", "baseHref": "/"},
+        "sourceLocale": {"code": "es", "baseHref": "/es/"},
         "locales": {
           "en": {
            "translation": "src/locale/messages.en.xlf",
@@ -27,9 +27,8 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "localize": ["en"],
+            "localize": true,
             "outputPath": "dist/techstore",
-
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
