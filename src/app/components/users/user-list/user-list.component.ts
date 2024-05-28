@@ -9,6 +9,7 @@ import { UnauthorizedComponent } from '../../unauthorized/unauthorized.component
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { initFlowbite } from 'flowbite';
 
 @Component({
   selector: 'app-user-list',
@@ -28,7 +29,10 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
   styleUrl: './user-list.component.less',
 })
 export class UserListComponent implements OnInit {
-  constructor(private userService: UserService, private router: Router) {}
+  constructor(private userService: UserService, private router: Router) {
+    $localize`Tech Store`;
+    initFlowbite();
+  }
 
   token = sessionStorage.getItem('token');
   users: IUser[] | null = null;

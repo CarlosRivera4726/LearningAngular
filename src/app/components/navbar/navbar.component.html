@@ -21,38 +21,38 @@
           <li>
             <a routerLink="/home" routerLinkActive="active"
               class="active:text-[#1a56db] block py-2 px-3 text-black dark:text-white rounded md:bg-transparent md:p-0"
-              aria-current="page">Inicio</a>
+              aria-current="page" i18n>Inicio</a>
           </li>
           @if(isLogged){ @if (isAdministrator()) {
           <li>
             <a routerLink="/users" routerLinkActive="active"
               class="active:text-[#1a56db] block py-2 px-3 text-black dark:text-white rounded md:bg-transparent md:p-0"
-              aria-current="page">Usuarios</a>
+              aria-current="page" i18n>Usuarios</a>
           </li>
 
           }
           <li>
             <a routerLink="/product/create" routerLinkActive="active"
               class="active:text-[#1a56db] block py-2 px-3 text-black dark:text-white rounded md:bg-transparent md:p-0"
-              aria-current="page">Subir Producto</a>
+              aria-current="page" i18n>Subir Producto</a>
           </li>
 
           <li>
             <button (click)="logout()" type="button"
               class="block py-2 px-3 text-black dark:text-white rounded md:bg-transparent md:p-0" aria-current="page">
-              CERRAR SESION
+              <span i18n> CERRAR SESIÓN</span>
             </button>
           </li>
           } @else {
           <li>
             <a routerLink="/login" routerLinkActive="active"
               class="active:text-[#1a56db] block py-2 px-3 text-black dark:text-white rounded md:bg-transparent md:p-0"
-              aria-current="page">Iniciar Sesion</a>
+              aria-current="page" i18n>Iniciar Sesion</a>
           </li>
           <li>
             <a routerLink="/user/register" routerLinkActive="active"
               class="active:text-[#1a56db] block py-2 px-3 text-black dark:text-white rounded md:bg-transparent md:p-0"
-              aria-current="page">Registrarse</a>
+              aria-current="page" i18n>Registrarse</a>
           </li>
 
           }

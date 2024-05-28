@@ -9,14 +9,20 @@
     <mat-card class="min-h-full bg-main-light dark:bg-main-dark">
       <mat-card-header>
         <mat-card-title class="text-black dark:text-white uppercase">{{product.name}}</mat-card-title>
-        <mat-card-subtitle class="text-black dark:text-white">Vendedor: {{product.seller.name}}
+        <mat-card-subtitle class="text-black dark:text-white" i18n>Vendedor: {{product.seller.name}}
           {{product.seller.lastName}}</mat-card-subtitle>
       </mat-card-header>
       <img class="block ml-auto mr-auto w-[50%] justify-center items-center text-center align-middle"
         src="{{product.image}}" mat-card-lg-image alt="{{product.name}}">
 
+      <mat-card-content class="text-black dark:text-white">
+        <p class="text-black dark:text-white" i18n>Precio: {{product.price | currency}}</p>
+        <p class="text-black dark:text-white" i18n>Cantidad: {{product.quantity}}</p>
+      </mat-card-content>
+
       <mat-card-actions class="justify-around">
-        <a class="cursor-pointer bg-blue-500 rounded-lg p-2 text-white font-bold hover:bg-blue-800">Comprar Ahora</a>
+        <a class="cursor-pointer bg-blue-500 rounded-lg p-2 text-white font-bold hover:bg-blue-800" i18n>Comprar
+          Ahora</a>
         <a
           class="cursor-pointer bg-blue-600 rounded-lg p-2 flex text-white font-bold hover:bg-blue-700 hover:text-white">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" aria-hidden="true"

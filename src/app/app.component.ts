@@ -21,9 +21,14 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
   styleUrl: './app.component.less',
 })
 export class AppComponent implements OnInit {
-  title = 'Tech Store';
+  title = `Tech Store`;
   name = localStorage.getItem('name');
   email = localStorage.getItem('email');
+
+  constructor() {
+    $localize`${this.title}`;
+    initFlowbite();
+  }
 
   ngOnInit(): void {
     this.verifyIfLogged();
