@@ -2,7 +2,7 @@
 <app-unauthorized></app-unauthorized>
 }@else {
 
-<h1 class="pt-10 text-black dark:text-white font-bold text-2xl text-center uppercase">
+<h1 i18n class="pt-10 text-black dark:text-white font-bold text-2xl text-center uppercase">
   Lista de Usuarios
 </h1>
 <div class="w-5/6 block content-center items-center m-auto mb-[13.5rem]">
@@ -16,19 +16,22 @@
           d="M9 4a4 4 0 1 0 0 8 4 4 0 0 0 0-8Zm-2 9a4 4 0 0 0-4 4v1a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2v-1a4 4 0 0 0-4-4H7Zm8-1a1 1 0 0 1 1-1h1v-1a1 1 0 1 1 2 0v1h1a1 1 0 1 1 0 2h-1v1a1 1 0 1 1-2 0v-1h-1a1 1 0 0 1-1-1Z"
           clip-rule="evenodd" />
       </svg>
-      Crear Usuario
+      <span i18n>
+        Crear Usuario
+      </span>
     </button>
     @if(users){
     <table
       class=" dark:bg-main-dark m-auto rounded-xl w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
       <thead class="rounded-full text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
         <tr>
-          <th scope="col" class="px-6 py-3">ID</th>
-          <th scope="col" class="px-6 py-3">NOMBRE</th>
-          <th scope="col" class="px-6 py-3">EMAIL</th>
-          <th scope="col" class="px-6 py-3">ROL</th>
-          <th scope="col" class="px-6 py-3">CONTRASEÑA</th>
-          <th scope="col" class="px-6 py-3">OPCIONES</th>
+          <th i18n scope="col" class="px-6 py-3">ID</th>
+          <th i18n scope="col" class="px-6 py-3">NOMBRE</th>
+          <th i18n scope="col" class="px-6 py-3">EMAIL</th>
+          <th i18n scope="col" class="px-6 py-3">ROL</th>
+          <th i18n scope="col" class="px-6 py-3">CONTRASEÑA</th>
+          <th i18n scope="col" class="px-6 py-3">CREADO EN</th>
+          <th i18n scope="col" class="px-6 py-3">OPCIONES</th>
         </tr>
       </thead>
       <tbody>
@@ -49,11 +52,19 @@
           <td class="px-6 py-4 whitespace-nowrap dark:text-white">
             {{ user.password | changeChar }}
           </td>
+          <td>
+            {{ user.createdAt | date}}
+          </td>
           <td class="px-2 py-5 whitespace-nowrap justify-between text-white">
-            <button routerLink="/users/edit/{{ user.id }}" mat-fab aria-label="Edit button" class="bg-blue-500">
+            <button data-tooltip-target="tooltip-bottom" data-tooltip-placement="bottom"
+              routerLink="/users/edit/{{ user.id }}" mat-fab aria-label="Edit button" class="bg-blue-500">
               <mat-icon>edit</mat-icon>
             </button>
-
+            <div id="tooltip-bottom" role="tooltip"
+              class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
+              Edit Button
+              <div class="tooltip-arrow" data-popper-arrow></div>
+            </div>
             <span class="m-1"></span>
             <button (click)="deleteUser(user.id)" mat-fab color="primary" aria-label="Delete button" class="bg-red-600">
               <mat-icon>delete</mat-icon>
@@ -70,7 +81,7 @@
           xmlns="http://www.w3.org/2000/svg">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
         </svg>
-        <p class="text-lg text-gray-400 dark:text-gray-500">
+        <p i18n class="text-lg text-gray-400 dark:text-gray-500">
           No hay usuarios registrados
         </p>
       </div>

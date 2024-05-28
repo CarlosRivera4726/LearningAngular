@@ -19,6 +19,7 @@ export class UploadImagesComponent {
   uploadedImages: string[] = [];
 
   constructor(private scriptService: ScriptService) {
+    $localize;
     this.scriptService.load('uw');
   }
 

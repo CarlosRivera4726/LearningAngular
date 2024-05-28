@@ -5,6 +5,7 @@ export interface IUser {
   email: string;
   password: string;
   roles: Rol[];
+  createdAt: Date;
 }
 
 export class Rol {

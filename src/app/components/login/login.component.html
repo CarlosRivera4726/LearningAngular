@@ -3,19 +3,19 @@
   @if(showMessage){
   <app-error-alert [message]="message"></app-error-alert>
   }
-  <h1 class="text-center text-main-dark dark:text-white font-bold uppercase pt-10">
+  <h1 i18n class="text-center text-main-dark dark:text-white font-bold uppercase pt-10">
     Iniciar sesión
   </h1>
   <div class="p-4 md:p-5">
     <form class="space-y-4" [formGroup]="formLogin" (ngSubmit)="onSubmit()">
       <div>
-        <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Tu correo:</label>
-        <input type="email" name="email" id="email" formControlName="email"
+        <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" i18n>Tu correo:</label>
+        <input i18n type="email" name="email" id="email" formControlName="email"
           class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
           placeholder="Correo Electronico" required />
       </div>
       <div>
-        <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Tu
+        <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" i18n>Tu
           contraseña:</label>
         <input type="password" name="password" id="password" placeholder="••••••••" formControlName="password"
           class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
@@ -28,18 +28,20 @@
               class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-blue-300 dark:bg-gray-600 dark:border-gray-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800"
               required />
           </div>
-          <label for="remember" class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Recuerdame</label>
+          <label for="remember" class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+            i18n>Recuerdame</label>
         </div>
-        <a href="#" class="text-sm text-blue-700 hover:underline dark:text-blue-500">Contraseña olvidada?</a>
+        <a href="#" class="text-sm text-blue-700 hover:underline dark:text-blue-500" i18n>Contraseña olvidada?</a>
       </div>
-      <button [disabled]="!this.formLogin.valid" type="submit"
+      <button i18n [disabled]="!this.formLogin.valid" type="submit"
         class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
         Iniciar Sesión
       </button>
-      <div class="text-sm font-medium text-gray-500 dark:text-gray-300">
+      <div class="text-sm font-medium text-gray-500 dark:text-gray-300" i18n>
         No está registrado?
-        <a routerLink="/user/register" class="cursor-pointer text-blue-700 hover:underline dark:text-blue-500">Crear
-          cuenta</a>
+        <a routerLink="/user/register" class="cursor-pointer text-blue-700 hover:underline dark:text-blue-500">
+          Crear Cuenta
+        </a>
       </div>
     </form>
   </div>

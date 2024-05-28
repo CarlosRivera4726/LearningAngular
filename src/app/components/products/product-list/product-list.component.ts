@@ -4,11 +4,12 @@ import { IProduct } from '../../../core/interfaces/products/iproduct';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
+import { CurrencyPipe } from '@angular/common';
 
 @Component({
   selector: 'app-product-list',
   standalone: true,
-  imports: [MatCardModule, MatIconModule, MatButtonModule],
+  imports: [MatCardModule, MatIconModule, MatButtonModule, CurrencyPipe],
   templateUrl: './product-list.component.html',
   styleUrl: './product-list.component.css',
 })

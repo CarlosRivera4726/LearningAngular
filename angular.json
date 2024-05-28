@@ -3,8 +3,13 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-
     "techstore": {
+      "i18n": {
+        "sourceLocale": "es-CO",
+        "locales": {
+          "en-US": "src/locale/messages.en.xlf"
+        }
+      },
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -19,6 +24,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
+            "localize": ["en-US"],
             "outputPath": "dist/techstore",
 
             "index": "src/index.html",

@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="es-CO" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="1737753151350322492" datatype="html">
+        <source><x id="PH" equiv-text="this.title"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/app.component.ts</context>
+          <context context-type="linenumber">29</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="625381763836037390" datatype="html">
+        <source>Tech Store </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/footer/footer.component.html</context>
+          <context context-type="linenumber">6,7</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3217097116466768588" datatype="html">
+        <source>Sobre Nosotros</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/footer/footer.component.html</context>
+          <context context-type="linenumber">11,12</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8433768950518578342" datatype="html">
+        <source>Contacto</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/footer/footer.component.html</context>
+          <context context-type="linenumber">14,15</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7777634325783018668" datatype="html">
+        <source>Todos los derechos reservados</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/footer/footer.component.html</context>
+          <context context-type="linenumber">20,21</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2330215751936654880" datatype="html">
+        <source> Iniciar sesión </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/login/login.component.html</context>
+          <context context-type="linenumber">7,8</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5677809845338397791" datatype="html">
+        <source>Tu correo:</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/login/login.component.html</context>
+          <context context-type="linenumber">12,13</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3134339194954999492" datatype="html">
+        <source>Tu contraseña:</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/login/login.component.html</context>
+          <context context-type="linenumber">19</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5534695883803652681" datatype="html">
+        <source>Recuerdame</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/login/login.component.html</context>
+          <context context-type="linenumber">32,33</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8419865607651632615" datatype="html">
+        <source>Contraseña olvidada?</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/login/login.component.html</context>
+          <context context-type="linenumber">34,35</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6221134413696283613" datatype="html">
+        <source> Iniciar Sesión </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/login/login.component.html</context>
+          <context context-type="linenumber">38,39</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8630873103478068065" datatype="html">
+        <source> No está registrado? <x id="START_LINK" ctype="x-a" equiv-text="&lt;a routerLink=&quot;/user/register&quot; class=&quot;cursor-pointer text-blue-700 hover:underline dark:text-blue-500&quot;&gt;"/> Crear Cuenta <x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/login/login.component.html</context>
+          <context context-type="linenumber">41,45</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1926157928707021468" datatype="html">
+        <source>Inicio</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/navbar/navbar.component.html</context>
+          <context context-type="linenumber">24,25</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5359751386135164450" datatype="html">
+        <source>Usuarios</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/navbar/navbar.component.html</context>
+          <context context-type="linenumber">30,31</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="879061571280381881" datatype="html">
+        <source>Subir Producto</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/navbar/navbar.component.html</context>
+          <context context-type="linenumber">37,38</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4190615411349058560" datatype="html">
+        <source> CERRAR SESIÓN</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/navbar/navbar.component.html</context>
+          <context context-type="linenumber">43,44</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8060912485843982716" datatype="html">
+        <source>Iniciar Sesion</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/navbar/navbar.component.html</context>
+          <context context-type="linenumber">50,51</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3854215443743812691" datatype="html">
+        <source>Registrarse</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/navbar/navbar.component.html</context>
+          <context context-type="linenumber">55,56</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8917629274647390405" datatype="html">
+        <source> Registrar Producto </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/products/product-form/product-form.component.html</context>
+          <context context-type="linenumber">11,12</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5357661269973482487" datatype="html">
+        <source>Nombre</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/products/product-form/product-form.component.html</context>
+          <context context-type="linenumber">20,21</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2090485092107532642" datatype="html">
+        <source>Precio</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/products/product-form/product-form.component.html</context>
+          <context context-type="linenumber">27,28</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2702769239797460498" datatype="html">
+        <source>Descripción</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/products/product-form/product-form.component.html</context>
+          <context context-type="linenumber">34,35</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5426109382041281633" datatype="html">
+        <source>Cantidad</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/products/product-form/product-form.component.html</context>
+          <context context-type="linenumber">42,43</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="377953261817565579" datatype="html">
+        <source>Imagen del producto</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/products/product-form/product-form.component.html</context>
+          <context context-type="linenumber">45,46</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7885548485937042616" datatype="html">
+        <source>Registrar Producto</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/products/product-form/product-form.component.html</context>
+          <context context-type="linenumber">54,55</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6913571803717597663" datatype="html">
+        <source>Vendedor: <x id="INTERPOLATION" equiv-text="{{product.seller.name}}"/> <x id="INTERPOLATION_1" equiv-text="{{product.seller.lastName}}"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/products/product-list/product-list.component.html</context>
+          <context context-type="linenumber">12,13</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1706154291169342103" datatype="html">
+        <source>Precio: <x id="INTERPOLATION" equiv-text="{{product.price | currency}}"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/products/product-list/product-list.component.html</context>
+          <context context-type="linenumber">19,20</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3165494080024445923" datatype="html">
+        <source>Cantidad: <x id="INTERPOLATION" equiv-text="{{product.quantity}}"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/products/product-list/product-list.component.html</context>
+          <context context-type="linenumber">20,21</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4084598923277231817" datatype="html">
+        <source>Comprar Ahora</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/products/product-list/product-list.component.html</context>
+          <context context-type="linenumber">25</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8334002659269017489" datatype="html">
+        <source>¡Hey, no estás autorizado para ver este contenido! </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/unauthorized/unauthorized.component.html</context>
+          <context context-type="linenumber">2,4</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7403260184488650209" datatype="html">
+        <source>Regresar</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/unauthorized/unauthorized.component.html</context>
+          <context context-type="linenumber">6,7</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7708270344948043036" datatype="html">
+        <source> <x id="INTERPOLATION" equiv-text="{{ isDisabled ? &quot;Abriendo Explorador&quot; : &quot;Subir Imagen&quot; }}"/> </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/upload-images/upload-images.component.html</context>
+          <context context-type="linenumber">4,6</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1267317830283232852" datatype="html">
+        <source> Lista de Usuarios
+</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/users/user-list/user-list.component.html</context>
+          <context context-type="linenumber">6,8</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2202569349171514166" datatype="html">
+        <source> Crear Usuario </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/users/user-list/user-list.component.html</context>
+          <context context-type="linenumber">20,21</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8040881171107393560" datatype="html">
+        <source>ID</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/users/user-list/user-list.component.html</context>
+          <context context-type="linenumber">29</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3239286340089195355" datatype="html">
+        <source>NOMBRE</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/users/user-list/user-list.component.html</context>
+          <context context-type="linenumber">29,30</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="9012586956848595996" datatype="html">
+        <source>EMAIL</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/users/user-list/user-list.component.html</context>
+          <context context-type="linenumber">30,31</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1501437208717913178" datatype="html">
+        <source>ROL</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/users/user-list/user-list.component.html</context>
+          <context context-type="linenumber">31,32</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5251741894171037757" datatype="html">
+        <source>CONTRASEÑA</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/users/user-list/user-list.component.html</context>
+          <context context-type="linenumber">32,33</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4161105870868496091" datatype="html">
+        <source>CREADO EN</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/users/user-list/user-list.component.html</context>
+          <context context-type="linenumber">33,34</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8271475839668181833" datatype="html">
+        <source>OPCIONES</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/users/user-list/user-list.component.html</context>
+          <context context-type="linenumber">34,35</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5512446760824316242" datatype="html">
+        <source> No hay usuarios registrados </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/users/user-list/user-list.component.html</context>
+          <context context-type="linenumber">85</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6254874768802646525" datatype="html">
+        <source>Tech Store</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/users/user-list/user-list.component.ts</context>
+          <context context-type="linenumber">33,34</context>
+        </context-group>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
