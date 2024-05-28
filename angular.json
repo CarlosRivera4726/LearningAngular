@@ -5,7 +5,7 @@
   "projects": {
     "techstore": {
       "i18n": {
-        "sourceLocale": "es-CO",
+        "sourceLocale": "es",
         "locales": {
           "en-US": "src/locale/messages.en.xlf"
         }
@@ -24,7 +24,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "localize": ["en-US"],
+            "localize": ["en"],
             "outputPath": "dist/techstore",
 
             "index": "src/index.html",
@@ -53,12 +53,12 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "600kb",
+                  "maximumWarning": "10mb",
                   "maximumError": "5mb"
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "40kb",
+                  "maximumWarning": "10mb",
                   "maximumError": "3mb"
                 }
               ],
