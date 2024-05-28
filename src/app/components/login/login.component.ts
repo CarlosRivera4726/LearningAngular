@@ -9,6 +9,7 @@ import {
 import { Router, RouterLink } from '@angular/router';
 import { UserService } from '../../core/services/users/user.service';
 import { LoginService } from '../../core/services/login/login.service';
+import { initFlowbite } from 'flowbite';
 
 @Component({
   selector: 'app-login',
@@ -22,6 +23,7 @@ export class LoginComponent implements OnInit {
   formLogin!: FormGroup;
 
   ngOnInit(): void {
+    initFlowbite();
     this.formLogin = new FormGroup({
       email: new FormControl('', [Validators.required, Validators.email]),
       password: new FormControl('', [
