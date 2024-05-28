@@ -5,7 +5,7 @@
   "projects": {
     "techstore": {
       "i18n": {
-        "sourceLocale": {"code": "es", "baseHref": "/"},
+        "sourceLocale": {"code": "es", "baseHref": "/es/"},
         "locales": {
           "en": {
            "translation": "src/locale/messages.en.xlf",
