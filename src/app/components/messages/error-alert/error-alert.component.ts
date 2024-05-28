@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { initFlowbite } from 'flowbite';
 
 @Component({
@@ -9,6 +9,7 @@ import { initFlowbite } from 'flowbite';
   styleUrl: './error-alert.component.css',
 })
 export class ErrorAlertComponent implements OnInit {
+  @Input() message: string = '';
   ngOnInit() {
     initFlowbite();
   }

@@ -1,5 +1,8 @@
 <div
   class="2xl:mt-20 xl:mt-36 w-80 m-auto border-main-dark dark:border-white rounded-lg border mt-10 shadow-inner shadow-dark">
+  @if(showMessage){
+  <app-error-alert [message]="message"></app-error-alert>
+  }
   <h1 class="text-center text-main-dark dark:text-white font-bold uppercase pt-10">
     Iniciar sesión
   </h1>
