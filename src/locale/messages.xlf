@@ -8,6 +8,10 @@
           <context context-type="sourcefile">src/app/app.component.ts</context>
           <context context-type="linenumber">29</context>
         </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/users/user-form/user-form.component.ts</context>
+          <context context-type="linenumber">32</context>
+        </context-group>
       </trans-unit>
       <trans-unit id="625381763836037390" datatype="html">
         <source>Tech Store </source>
@@ -30,11 +34,26 @@
           <context context-type="linenumber">14,15</context>
         </context-group>
       </trans-unit>
+      <trans-unit id="7535527225967694107" datatype="html">
+        <source>Español</source>
+        <target>Spanish</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/footer/footer.component.html</context>
+          <context context-type="linenumber">18,19</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5866254605255506989" datatype="html">
+        <source>English</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/footer/footer.component.html</context>
+          <context context-type="linenumber">22,23</context>
+        </context-group>
+      </trans-unit>
       <trans-unit id="7777634325783018668" datatype="html">
         <source>Todos los derechos reservados</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/footer/footer.component.html</context>
-          <context context-type="linenumber">20,21</context>
+          <context context-type="linenumber">28,29</context>
         </context-group>
       </trans-unit>
       <trans-unit id="2330215751936654880" datatype="html">
@@ -141,6 +160,10 @@
           <context context-type="sourcefile">src/app/components/products/product-form/product-form.component.html</context>
           <context context-type="linenumber">20,21</context>
         </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/users/user-form/user-form.component.html</context>
+          <context context-type="linenumber">19,20</context>
+        </context-group>
       </trans-unit>
       <trans-unit id="2090485092107532642" datatype="html">
         <source>Precio</source>
@@ -177,6 +200,27 @@
           <context context-type="linenumber">54,55</context>
         </context-group>
       </trans-unit>
+      <trans-unit id="3906383782503077985" datatype="html">
+        <source>Producto añadido correctamente.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/products/product-form/product-form.component.ts</context>
+          <context context-type="linenumber">67</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2398876174863900730" datatype="html">
+        <source>El producto no pudo ser añadido.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/products/product-form/product-form.component.ts</context>
+          <context context-type="linenumber">76</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1275093519192712733" datatype="html">
+        <source>LISTA DE PRODUCTOS</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/products/product-list/product-list.component.html</context>
+          <context context-type="linenumber">2,3</context>
+        </context-group>
+      </trans-unit>
       <trans-unit id="6913571803717597663" datatype="html">
         <source>Vendedor: <x id="INTERPOLATION" equiv-text="{{product.seller.name}}"/> <x id="INTERPOLATION_1" equiv-text="{{product.seller.lastName}}"/></source>
         <context-group purpose="location">
@@ -184,18 +228,18 @@
           <context context-type="linenumber">12,13</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="1706154291169342103" datatype="html">
-        <source>Precio: <x id="INTERPOLATION" equiv-text="{{product.price | currency}}"/></source>
+      <trans-unit id="2520628223219999682" datatype="html">
+        <source>Precio:</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/products/product-list/product-list.component.html</context>
-          <context context-type="linenumber">19,20</context>
+          <context context-type="linenumber">19</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="3165494080024445923" datatype="html">
-        <source>Cantidad: <x id="INTERPOLATION" equiv-text="{{product.quantity}}"/></source>
+      <trans-unit id="6215285122016676389" datatype="html">
+        <source>Cantidad:</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/products/product-list/product-list.component.html</context>
-          <context context-type="linenumber">20,21</context>
+          <context context-type="linenumber">20</context>
         </context-group>
       </trans-unit>
       <trans-unit id="4084598923277231817" datatype="html">
@@ -224,6 +268,97 @@
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/components/upload-images/upload-images.component.html</context>
           <context context-type="linenumber">4,6</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6121280062403357056" datatype="html">
+        <source>Apellido</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/users/user-form/user-form.component.html</context>
+          <context context-type="linenumber">27,28</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6597520566647669940" datatype="html">
+        <source>Correo</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/users/user-form/user-form.component.html</context>
+          <context context-type="linenumber">35,36</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4257363032223144829" datatype="html">
+        <source>SELECCIONE SU ROL</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/users/user-form/user-form.component.html</context>
+          <context context-type="linenumber">40,41</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6459338148967667237" datatype="html">
+        <source>Rol</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/users/user-form/user-form.component.html</context>
+          <context context-type="linenumber">47,48</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7132730488496169673" datatype="html">
+        <source>Contraseña</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/users/user-form/user-form.component.html</context>
+          <context context-type="linenumber">55,56</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3602583205155590634" datatype="html">
+        <source>Repite tu contraseña</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/users/user-form/user-form.component.html</context>
+          <context context-type="linenumber">64</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4695992013211215623" datatype="html">
+        <source>Agregar Usuario</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/users/user-form/user-form.component.ts</context>
+          <context context-type="linenumber">34</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7277359213015467276" datatype="html">
+        <source>Registro de Usuario</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/users/user-form/user-form.component.ts</context>
+          <context context-type="linenumber">57</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6632777142199804295" datatype="html">
+        <source>Editar Usuario</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/users/user-form/user-form.component.ts</context>
+          <context context-type="linenumber">82</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3026628165699502826" datatype="html">
+        <source>Error al obtener el usuario</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/users/user-form/user-form.component.ts</context>
+          <context context-type="linenumber">89</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2721430932472641500" datatype="html">
+        <source>Por favor, complete todos los campos!</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/users/user-form/user-form.component.ts</context>
+          <context context-type="linenumber">105</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3133081539933049013" datatype="html">
+        <source>Usuario actualizado correctamente!</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/users/user-form/user-form.component.ts</context>
+          <context context-type="linenumber">126</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3655957579964945923" datatype="html">
+        <source>Error al agregar el usuario</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/components/users/user-form/user-form.component.ts</context>
+          <context context-type="linenumber">155</context>
         </context-group>
       </trans-unit>
       <trans-unit id="1267317830283232852" datatype="html">

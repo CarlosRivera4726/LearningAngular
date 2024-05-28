@@ -1,5 +1,5 @@
 <mat-card class="text-center text-white bg-[#394459] font-bold">
-  <mat-card-content class="bg-[#ece6e6] text-black dark:text-white dark:bg-[#394459]">LISTA DE
+  <mat-card-content class="bg-[#ece6e6] text-black dark:text-white dark:bg-[#394459]" i18n>LISTA DE
     PRODUCTOS</mat-card-content>
 </mat-card>
 
@@ -16,8 +16,8 @@
         src="{{product.image}}" mat-card-lg-image alt="{{product.name}}">
 
       <mat-card-content class="text-black dark:text-white">
-        <p class="text-black dark:text-white" i18n>Precio: {{product.price | currency}}</p>
-        <p class="text-black dark:text-white" i18n>Cantidad: {{product.quantity}}</p>
+        <p class="text-black dark:text-white"><span i18n>Precio:</span>{{product.price | currency }}</p>
+        <p class="text-black dark:text-white"><span i18n>Cantidad:</span>{{product.quantity}}</p>
       </mat-card-content>
 
       <mat-card-actions class="justify-around">

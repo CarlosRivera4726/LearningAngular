@@ -28,8 +28,10 @@ export class UserFormComponent implements OnInit {
     private verifyLogin: LoginService,
     private router: Router,
     private route: ActivatedRoute
-  ) {}
-  title: string = 'Agregar Usuario';
+  ) {
+    $localize`${this.title}`;
+  }
+  title: string = $localize`Agregar Usuario`;
   userForm!: FormGroup;
   message: string = '';
   isError!: boolean;
@@ -52,7 +54,7 @@ export class UserFormComponent implements OnInit {
 
     if (this.router.url.includes('register')) {
       this.isAddMode = true;
-      this.title = 'Registro de Usuario';
+      this.title = $localize`Registro de Usuario`;
     }
 
     this.userForm = this.formBuilder.group({
@@ -77,14 +79,14 @@ export class UserFormComponent implements OnInit {
       ],
     });
     if (!this.isAddMode) {
-      this.title = 'Editar Usuario';
+      this.title = $localize`Editar Usuario`;
       this.userService.getUser(this.id).subscribe({
         next: (data: IUser) => {
           data.password = '';
           this.userForm.patchValue(data);
         },
         error: (error) => {
-          this.message = 'Error al obtener el usuario';
+          this.message = $localize`Error al obtener el usuario`;
           this.style =
             'p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-300';
         },
@@ -100,7 +102,7 @@ export class UserFormComponent implements OnInit {
     if (this.userForm.invalid) {
       this.style =
         'p-4 mb-4 text-sm text-yellow-800 rounded-lg bg-yellow-50 dark:bg-gray-800 dark:text-yellow-300';
-      this.message = 'Por favor, complete todos los campos!';
+      this.message = $localize`Por favor, complete todos los campos!`;
       return;
     }
 
@@ -121,7 +123,7 @@ export class UserFormComponent implements OnInit {
     this.userService.updateUser(this.id, user).subscribe({
       next: (data: IUser) => {
         setTimeout(() => {
-          this.message = 'Usuario actualizado correctamente!';
+          this.message = $localize`Usuario actualizado correctamente!`;
           this.style =
             'p-4 mb-4 text-sm text-green-800 rounded-lg bg-green-50 dark:bg-gray-800 dark:text-green-300';
           this.router.navigate(['/users']);
@@ -136,7 +138,7 @@ export class UserFormComponent implements OnInit {
     this.userService.addUser(newUser).subscribe({
       next: (data) => {
         this.isError = false;
-        this.message = 'Usuario agregado correctamente!';
+        this.message = `Usuario agregado correctamente!`;
         this.style =
           'p-4 mb-4 text-sm text-green-800 rounded-lg bg-green-50 dark:bg-gray-800 dark:text-green-300';
         setTimeout(() => {
@@ -150,7 +152,7 @@ export class UserFormComponent implements OnInit {
       error: (error) => {
         console.log(error);
         this.isError = true;
-        this.message = 'Error al agregar el usuario: ' + error.headers.message;
+        this.message = $localize`Error al agregar el usuario`;
         this.style =
           'p-4 mb-4 text-sm text-green-800 rounded-lg bg-green-50 dark:bg-gray-800 dark:text-green-300';
       },
