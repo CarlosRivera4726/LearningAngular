@@ -12,12 +12,22 @@
 }
 :root{
   color-scheme: light dark;
+
+  button[disabled] {
+    background-color: gray;
+  }
+
+  button[disabled]:hover {
+    background-color: rgb(56, 56, 56);
+  }
 }
 *{
   font-family: 'RobotoUI';
   color-scheme: light dark;
 
 }
+
+
 html{
   scroll-behavior: smooth;
 }
