@@ -3,28 +3,12 @@
 @tailwind components;
 @tailwind utilities;
 
-button[disabled] {
-  background-color: #373737;
-}
-
-button[disabled]:hover {
-  background-color: #373737;
-}
-
 select > option {
   background-color: white;
 }
 
 
 @media(prefers-color-scheme: dark) {
-  button[disabled] {
-    background-color: #373737;
-
-  }
-  button[disabled]:hover {
-    background-color: #373737;
-  }
-
   select > option {
     background-color: #373737;
   }
