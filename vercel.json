@@ -1,15 +1,9 @@
 {
-  "rewrites": [
+  "redirects": [
     {
       "source": "/",
-      "has": [
-        {
-          "type": "header",
-          "key": "accept-language",
-          "value": "^es($|,)"
-        }
-      ],
-      "destination": "/"
+      "destination": "/es/",
+      "permanent": true
     }
   ]
 }
