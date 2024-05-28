@@ -3,22 +3,18 @@
     PRODUCTOS</mat-card-content>
 </mat-card>
 
-<div class="flex flex-wrap gap-5 ml-20 mt-5 h-full ">
+<div class="flex flex-wrap sm:ml-0 gap-5 ml-16 mt-5 h-full">
   @for (product of products; track $index) {
-  <div class="max-w-80 border border-solid border-black dark:border-white rounded-lg ">
+  <div class="border border-solid border-black dark:border-white rounded-lg w-72 sm:w-64 sm:ml-5">
     <mat-card class="min-h-full bg-main-light dark:bg-main-dark">
       <mat-card-header>
         <mat-card-title class="text-black dark:text-white uppercase">{{product.name}}</mat-card-title>
-        <mat-card-subtitle class="text-black dark:text-white">{{product.seller.name}}
+        <mat-card-subtitle class="text-black dark:text-white">Vendedor: {{product.seller.name}}
           {{product.seller.lastName}}</mat-card-subtitle>
       </mat-card-header>
       <img class="block ml-auto mr-auto w-[50%] justify-center items-center text-center align-middle"
         src="{{product.image}}" mat-card-lg-image alt="{{product.name}}">
-      <mat-card-content>
-        <p class="text-black dark:text-white">
-          {{product.description}}
-        </p>
-      </mat-card-content>
+
       <mat-card-actions class="justify-around">
         <a class="cursor-pointer bg-blue-500 rounded-lg p-2 text-white font-bold hover:bg-blue-800">COMPRAR
           AHORA</a>
