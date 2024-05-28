@@ -27,9 +27,8 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "localize": ["en"],
+            "localize": true,
             "outputPath": "dist/techstore",
-
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
