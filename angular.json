@@ -35,8 +35,8 @@
             "styles": [
               "src/styles.css",
               "node_modules/tailwindcss/tailwind.css",
-              "@angular/material/prebuilt-themes/purple-green.css",
-              "node_modules/flowbite/dist/flowbite.css"
+              "node_modules/flowbite/dist/flowbite.css",
+              "@angular/material/prebuilt-themes/purple-green.css"
             ],
             "scripts": [
               "node_modules/flowbite/dist/flowbite.js"
@@ -87,10 +87,7 @@
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "polyfills": [
-              "zone.js",
-              "zone.js/testing"
-            ],
+            "polyfills": [],
             "tsConfig": "tsconfig.spec.json",
             "inlineStyleLanguage": "css",
             "assets": [
