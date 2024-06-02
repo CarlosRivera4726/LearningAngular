@@ -8,10 +8,11 @@ import { SERVER_URL_DEPLOY, SERVER_URL_LOCAL } from '../../environments/environm
   providedIn: 'root',
 })
 export class LoginService {
+  url: string = `${SERVER_URL_DEPLOY}/auth/login`
   constructor(private http: HttpClient) {}
 
   login(user: IUserLogin): Observable<any> {
-    return this.http.post<any>(`${SERVER_URL_LOCAL}/auth/login`, user);
+    return this.http.post<any>(this.url, user);
   }
 
   verifyLogin() {
