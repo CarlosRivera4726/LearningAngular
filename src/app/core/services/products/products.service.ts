@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { IProduct } from '../../interfaces/products/iproduct';
-import { SERVER_URL_LOCAL, environment } from '../../environments/environment';
+import { SERVER_URL_DEPLOY } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root',
@@ -22,8 +22,6 @@ export class ProductsService {
   }
   addProduct(product: IProduct): Observable<IProduct> {
     return this.http.post<IProduct>(
-      `${SERVER_URL_LOCAL}/product`,
-
       this.url,
       product,
       this.options

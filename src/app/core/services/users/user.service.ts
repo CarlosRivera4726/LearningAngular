@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { IUser } from '../../interfaces/users/iuser';
 import { Observable } from 'rxjs';
 import { IUserLogin } from '../../interfaces/users/iUserLogin';
-import { SERVER_URL_LOCAL } from '../../environments/environment';
+import { SERVER_URL_DEPLOY } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root',
@@ -20,7 +20,7 @@ export class UserService {
   }
 
   options = {};
-  private url: string = `${SERVER_URL_LOCAL}/users`;
+  private url: string = `${SERVER_URL_DEPLOY}/users`;
 
   getUsers(): Observable<IUser[]> {
     return this.http.get<IUser[]>(this.url, this.options);
