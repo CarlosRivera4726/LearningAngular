@@ -9,12 +9,13 @@ import { SERVER_URL_DEPLOY } from '../../environments/environment';
 })
 export class RolService {
   constructor(private http: HttpClient) {}
+  private url: string = `${SERVER_URL_DEPLOY}/roles`;
 
   getRoles(): Observable<IRole[]> {
-    return this.http.get<IRole[]>(`${SERVER_URL_DEPLOY}/roles`);
+    return this.http.get<IRole[]>(this.url);
   }
 
   getRol(name: string): Observable<IRole> {
-    return this.http.get<IRole>(`${SERVER_URL_DEPLOY}/roles/${name}`);
+    return this.http.get<IRole>(`${this.url}${name}`);
   }
 }

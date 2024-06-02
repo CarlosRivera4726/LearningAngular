@@ -11,6 +11,7 @@ export class ProductsService {
   photos: any;
   products: IProduct[] = [];
   options = {};
+  url: string = `${SERVER_URL_DEPLOY}/product`
   constructor(private http: HttpClient) {
     this.options = {
       headers: {
@@ -19,33 +20,17 @@ export class ProductsService {
       },
     };
   }
-  setLocalProduct(product: IProduct) {
-    this.products.push(product);
-  }
   addProduct(product: IProduct): Observable<IProduct> {
     return this.http.post<IProduct>(
-      `${SERVER_URL_DEPLOY}/product`,
+      this.url,
       product,
       this.options
     );
   }
-  getLocalProducts(): IProduct[] {
-    return this.products;
-  }
   getProducts(): Observable<IProduct[]> {
     return this.http.get<IProduct[]>(
-      `${SERVER_URL_DEPLOY}/product`,
+      this.url,
       this.options
     );
-  }
-
-  getData(tag: string): void {
-    this.http
-      .get(
-        `https://res.cloudinary.com/${environment.CLOUD_NAME}/image/list/${tag}.json`
-      )
-      .subscribe((data: any) => {
-        this.photos = data.resources;
-      });
   }
 }
