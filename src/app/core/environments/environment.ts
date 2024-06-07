@@ -3,5 +3,5 @@ export const environment = {
   UPLOAD_PRESET: 'lgiqr6xt',
 };
 
-export const SERVER_URL_DEPLOY = 'http://localhost:3000';
-export const SERVER_URL_LOCAL = 'http://localhost:3000';
+export const SERVER_URL_DEPLOY =
+  'https://learningnestjs-production-5567.up.railway.app/';
