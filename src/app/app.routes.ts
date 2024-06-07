@@ -11,6 +11,7 @@ import { UserListComponent } from './components/users/user-list/user-list.compon
 import { ProductFormComponent } from './components/products/product-form/product-form.component';
 import { UploadImagesComponent } from './components/upload-images/upload-images.component';
 import { UnauthorizedComponent } from './components/unauthorized/unauthorized.component';
+import { ChatComponent } from './components/chat/chat.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -38,6 +39,10 @@ export const routes: Routes = [
     path: 'users/edit/:id',
     component: UserFormComponent,
     canActivate: [verifyLoginGuard, verifyRoleGuard],
+  },
+  {
+    path: 'chat',
+    component: ChatComponent,
   },
   { path: 'product/create', component: ProductFormComponent },
   { path: 'upload', component: UploadImagesComponent },
