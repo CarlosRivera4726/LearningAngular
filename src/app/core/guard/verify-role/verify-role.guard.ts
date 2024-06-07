@@ -8,8 +8,11 @@ enum Rol {
 }
 
 export const verifyRoleGuard: CanActivateFn = (route, state) => {
-  console.log(localStorage.getItem('role') !== Rol.ADMIN ? false : true);
-  const role = localStorage.getItem('role') || '';
+  const user = JSON.parse(sessionStorage.getItem('user') || '{}');
+  //console.log(localStorage.getItem('role') !== Rol.ADMIN ? false : true);
+  //const role = localStorage.getItem('role') || '';
   // verify if role string contains ADMIN
-  return role.includes(Rol.ADMIN);
+  console.log(user);
+  //return roles.name.includes(Rol.ADMIN);
+  return true;
 };

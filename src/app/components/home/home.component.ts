@@ -10,10 +10,11 @@ import { ProductListComponent } from '../products/product-list/product-list.comp
   templateUrl: './home.component.html',
   styleUrl: './home.component.less',
 })
-export class HomeComponent {
-  name = localStorage.getItem('name');
-  email = localStorage.getItem('email');
-  role = localStorage.getItem('role');
+export class HomeComponent implements OnInit {
   constructor() {}
+  ngOnInit(): void {
+    const user = JSON.parse(sessionStorage.getItem('user') || '{}');
+    console.log(user.roles.includes('ADMINISTRADOR') ? true : false);
+  }
   realTime = Date.now();
 }

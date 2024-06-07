@@ -30,9 +30,7 @@ export class LoginService {
     localStorage.setItem(this.tokenKey, token);
   }
   private setUser(user: any): void {
-    sessionStorage.setItem(user.email, JSON.stringify(user));
-    sessionStorage.setItem(user.name, JSON.stringify(user));
-    sessionStorage.setItem(user.lastName, JSON.stringify(user));
+    sessionStorage.setItem('user', JSON.stringify(user));
   }
 
   private getToken(): string | null {
@@ -53,6 +51,7 @@ export class LoginService {
 
   logout(): void {
     localStorage.removeItem(this.tokenKey);
+    sessionStorage.removeItem('user');
     this.router.navigate(['/login']);
   }
 }
