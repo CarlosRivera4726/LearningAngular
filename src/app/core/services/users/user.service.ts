@@ -4,16 +4,17 @@ import { IUser } from '../../interfaces/users/iuser';
 import { Observable } from 'rxjs';
 import { IUserLogin } from '../../interfaces/users/iUserLogin';
 import { SERVER_URL_DEPLOY } from '../../environments/environment';
+import { LoginService } from '../login/login.service';
 
 @Injectable({
   providedIn: 'root',
 })
 export class UserService {
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, private loginService: LoginService) {
     this.options = {
       headers: {
-        Authorization: sessionStorage.getItem('token')
-          ? 'Bearer ' + sessionStorage.getItem('token')
+        Authorization: localStorage.getItem('token')
+          ? 'Bearer ' + localStorage.getItem('token')
           : '',
       },
     };

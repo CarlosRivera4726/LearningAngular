@@ -40,20 +40,7 @@ export class LoginComponent implements OnInit {
     this.loginService.login(this.formLogin.value).subscribe({
       next: (login) => {
         //console.log(login);
-        sessionStorage.setItem('token', login.Authorization);
-        localStorage.setItem('name', login.data.name);
-        localStorage.setItem('email', login.data.email);
-        localStorage.setItem('id', login.data.id);
-
-        const rolSepareted = login.data.roles
-          .map((roles: any) => roles.name)
-          .join(', ');
-        localStorage.setItem('role', rolSepareted);
-        if (rolSepareted.includes('ADMINISTRADOR')) {
-          this.router.navigate(['/users']);
-        } else {
-          this.router.navigate(['/home']);
-        }
+        console.log(login);
       },
       error: (error) => {
         this.message =

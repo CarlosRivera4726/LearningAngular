@@ -1,6 +1,7 @@
 import { Component, OnChanges, OnInit } from '@angular/core';
 import { Router, RouterLink, RouterLinkActive } from '@angular/router';
 import { initFlowbite } from 'flowbite';
+import { LoginService } from '../../core/services/login/login.service';
 
 @Component({
   selector: 'app-navbar',
@@ -10,15 +11,15 @@ import { initFlowbite } from 'flowbite';
   styleUrl: './navbar.component.less',
 })
 export class NavbarComponent implements OnInit {
-  constructor(private router: Router) {}
+  constructor(private router: Router, private loginService: LoginService) {}
   token: string | null = null;
   isLogged: boolean = false;
-  readonly role = localStorage.getItem('role');
+  readonly role = sessionStorage.getItem('role');
   ngOnInit(): void {
     initFlowbite();
     this.router.events.subscribe((val: any) => {
       if (val.url) {
-        if (this.getToken()) {
+        if (this.loginService.isAuthenticated()) {
           this.isLogged = true;
         } else {
           this.isLogged = false;
@@ -26,18 +27,9 @@ export class NavbarComponent implements OnInit {
       }
     });
   }
-  getToken() {
-    this.token = sessionStorage.getItem('token');
-    return this.token ? true : false;
-  }
 
-  logout() {
-    sessionStorage.removeItem('token');
-    localStorage.removeItem('name');
-    localStorage.removeItem('email');
-    localStorage.removeItem('role');
-    this.isLogged = false;
-    this.router.navigate(['/login']);
+  logout(): void {
+    this.loginService.logout();
   }
   isAdministrator(): boolean {
     return this.role?.includes('ADMINISTRADOR') || false;

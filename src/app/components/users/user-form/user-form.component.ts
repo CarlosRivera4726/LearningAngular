@@ -142,7 +142,7 @@ export class UserFormComponent implements OnInit {
         this.style =
           'p-4 mb-4 text-sm text-green-800 rounded-lg bg-green-50 dark:bg-gray-800 dark:text-green-300';
         setTimeout(() => {
-          if (this.verifyLogin.verifyLogin()) {
+          if (this.verifyLogin.isAuthenticated()) {
             this.router.navigate(['/users']);
           } else {
             this.router.navigate(['/login']);
