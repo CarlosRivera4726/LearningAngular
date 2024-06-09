@@ -11,6 +11,7 @@ import { UserService } from '../../core/services/users/user.service';
 import { LoginService } from '../../core/services/login/login.service';
 import { initFlowbite } from 'flowbite';
 import { ErrorAlertComponent } from '../messages/error-alert/error-alert.component';
+import { SharedService } from '../../core/services/shared/shared.service';
 
 @Component({
   selector: 'app-login',
@@ -22,7 +23,7 @@ import { ErrorAlertComponent } from '../messages/error-alert/error-alert.compone
 export class LoginComponent implements OnInit {
   protected message: string = '';
   protected showMessage: boolean = false;
-  constructor(private router: Router, private loginService: LoginService) {}
+  constructor(private router: Router, private loginService: LoginService, private sharedService: SharedService) {}
   formLogin!: FormGroup;
 
   ngOnInit(): void {
@@ -39,8 +40,7 @@ export class LoginComponent implements OnInit {
   onSubmit() {
     this.loginService.login(this.formLogin.value).subscribe({
       next: (login) => {
-        //console.log(login);
-        console.log(login);
+        this.sharedService.emitAuthChange(true);
       },
       error: (error) => {
         this.message =

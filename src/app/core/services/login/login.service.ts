@@ -49,6 +49,24 @@ export class LoginService {
     return now < exp;
   }
 
+  isAuthenticatedObservable(): Observable<boolean> {
+    const observer = new Observable<boolean>((subscriber) => {
+    const token = this.getToken();
+    if (!token) {
+      subscriber.next(false);
+      return;
+    }
+
+    const payload = JSON.parse(atob(token.split('.')[1]));
+    const exp = payload.exp * 1000;
+    const now = Date.now();
+    subscriber.next(now < exp);
+    return;
+    });
+
+    return observer;
+  }
+
   logout(): void {
     localStorage.removeItem(this.tokenKey);
     sessionStorage.removeItem('user');

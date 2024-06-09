@@ -13,8 +13,6 @@ import { ProductListComponent } from '../products/product-list/product-list.comp
 export class HomeComponent implements OnInit {
   constructor() {}
   ngOnInit(): void {
-    const user = JSON.parse(sessionStorage.getItem('user') || '{}');
-    console.log(user.roles.includes('ADMINISTRADOR') ? true : false);
   }
   realTime = Date.now();
 }

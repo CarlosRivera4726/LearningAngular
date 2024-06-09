@@ -4,4 +4,11 @@ export const environment = {
 };
 
 export const SERVER_URL_DEPLOY = 'http://localhost:3000';
-export const SERVER_URL_LOCAL = 'http://localhost:3000';
+
+export enum Rol {
+  ADMIN = 'ADMINISTRADOR',
+  CUSTOMER = 'CLIENTE',
+  USER = 'USUARIO',
+  SELLER = 'VENDEDOR',
+}
+

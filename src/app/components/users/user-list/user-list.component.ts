@@ -28,36 +28,29 @@ import { initFlowbite } from 'flowbite';
   templateUrl: './user-list.component.html',
   styleUrl: './user-list.component.less',
 })
-export class UserListComponent implements OnInit {
+export default class UserListComponent implements OnInit {
   constructor(private userService: UserService, private router: Router) {
     $localize`Tech Store`;
     initFlowbite();
   }
-
-  token = sessionStorage.getItem('token');
   users: IUser[] | null = null;
-  role = sessionStorage.getItem('role');
 
   ngOnInit(): void {
     this.getUsers();
   }
 
   getUsers(): void {
-    if (!this.token || this.role?.includes('ADMINISTRADOR')) {
-      this.router.navigate(['/unauthorized']);
-    } else {
-      this.userService.getUsers().subscribe({
-        next: (users) => {
-          this.users = users;
-        },
-        error: (err) => {
-          this.users = null;
-        },
-        complete: () => {
-          this.ngOnInit();
-        },
-      });
-    }
+    this.userService.getUsers().subscribe({
+      next: (users) => {
+        this.users = users;
+      },
+      error: (err) => {
+        this.users = null;
+      },
+      complete: () => {
+        this.ngOnInit();
+      },
+    });
   }
 
   deleteUser(id: string): void {
